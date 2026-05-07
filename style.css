@@ -1219,6 +1219,564 @@ ul { list-style: none; }
 .cta-banner--gold .cta-banner__sub { color: rgba(0,0,0,.5); }
 .cta-banner--dark .cta-banner__sub { color: #666; }
 
+/* ── NABÍDKA (úvodní stránka) ── */
+.nabidka {
+  padding: var(--space-xl) var(--px);
+  background: var(--white);
+}
+.nabidka__inner {
+  max-width: 960px;
+}
+.nabidka__sub {
+  font-family: var(--fb);
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 520px;
+  margin-top: -.5rem;
+  margin-bottom: 3rem;
+}
+.nabidka__block {
+  margin-bottom: 2.75rem;
+}
+.nabidka__block-label {
+  font-family: var(--fd);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 1.1rem;
+}
+.nabidka__znacky {
+  display: flex;
+  gap: .65rem;
+  flex-wrap: wrap;
+}
+.nabidka__znacka {
+  padding: .65rem 1.4rem;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--fd);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  background: var(--white);
+  transition: border-color .2s, background .2s;
+}
+.nabidka__znacka:hover {
+  border-color: var(--gold);
+  background: #FDFCF8;
+}
+.nabidka__kats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.nabidka__kat {
+  background: var(--white);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  transition: background .2s;
+}
+.nabidka__kat:hover { background: var(--gray-bg); }
+.nabidka__kat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.nabidka__kat-name {
+  font-family: var(--fd);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.nabidka__kat-sub {
+  font-family: var(--fb);
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.nabidka__teaser {
+  margin-top: 1.75rem;
+  padding: 1.4rem 1.75rem;
+  background: var(--gray-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.nabidka__teaser-text {
+  font-family: var(--fb);
+  font-size: 13.5px;
+  color: var(--body);
+  line-height: 1.6;
+}
+.nabidka__teaser-text strong {
+  color: var(--black);
+  font-weight: 600;
+}
+.nabidka__teaser-link {
+  font-family: var(--fd);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--black);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color .2s;
+}
+.nabidka__teaser-link:hover { color: var(--gold-dark); }
+
+/* ── KOLA PAGE — značky grid ── */
+.znacky-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+.znacka-card {
+  background: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 1.75rem 1.85rem;
+  transition: border-color .2s;
+}
+.znacka-card:hover { border-color: var(--gold); }
+.znacka-card__name {
+  font-family: var(--fd);
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--black);
+  margin-bottom: .5rem;
+}
+.znacka-card__desc {
+  font-family: var(--fb);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.znacka-card__tag {
+  display: inline-block;
+  margin-top: .75rem;
+  font-family: var(--fd);
+  font-size: 10px;
+  font-weight: 700;
+  color: #7A5C00;
+  background: rgba(245,184,0,.15);
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* ── KOLA PAGE — doplňky grid ── */
+.doplnky-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+.doplnky-kat {
+  background: var(--white);
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem;
+  transition: background .2s;
+}
+.doplnky-kat:hover { background: var(--gray-bg); }
+.doplnky-kat__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.doplnky-kat__name {
+  font-family: var(--fd);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 3px;
+}
+.doplnky-kat__sub {
+  font-family: var(--fb);
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ── COME IN BOX ── */
+.come-in {
+  background: var(--black);
+  border-radius: 8px;
+  padding: 2rem 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.come-in__text {
+  font-family: var(--fb);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.55;
+}
+.come-in__text span { color: var(--gold); }
+
+/* Responsive nabídka */
+@media (max-width: 900px) {
+  .nabidka__kats { grid-template-columns: repeat(2, 1fr); }
+  .znacky-grid { grid-template-columns: 1fr; }
+  .doplnky-grid { grid-template-columns: repeat(2, 1fr); }
+  .come-in { flex-direction: column; align-items: flex-start; }
+  .nabidka__teaser { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 600px) {
+  .nabidka__kats { grid-template-columns: 1fr; }
+  .doplnky-grid { grid-template-columns: 1fr; }
+}
+
+/* ── KONTAKT PAGE ── */
+.kontakt-new {
+  background: #F7F6F3;
+  border-top: 3px solid var(--gold);
+  padding: var(--space-xl) var(--px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+.kontakt-new .k-label {
+  font-family: var(--fd);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .6rem;
+}
+.kontakt-new .k-value {
+  font-family: var(--fd);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  line-height: 1.25;
+}
+.kontakt-new .k-value a { color: var(--black); transition: color .2s; }
+.kontakt-new .k-value a:hover { color: var(--gold-dark); }
+.kontakt-new .k-block { margin-bottom: 2rem; }
+.kontakt-new .k-block:last-child { margin-bottom: 0; }
+.kontakt-new .k-hours { display: flex; flex-direction: column; gap: .7rem; }
+.kontakt-new .k-hour-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: .7rem;
+  border-bottom: 1px solid var(--border);
+}
+.kontakt-new .k-hour-row:last-child { border-bottom: none; padding-bottom: 0; }
+.kontakt-new .k-hour-day { font-family: var(--fb); font-size: 14px; color: #888; }
+.kontakt-new .k-hour-time {
+  font-family: var(--fd);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: .03em;
+}
+.kontakt-new .k-hour-time--closed { color: #ccc; }
+
+.prodejna-foto {
+  margin-top: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--gray-light);
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.prodejna-foto img { width: 100%; height: 100%; object-fit: cover; }
+.prodejna-foto__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  text-align: center;
+}
+.prodejna-foto__placeholder-icon {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--border);
+  display: flex; align-items: center; justify-content: center;
+}
+.prodejna-foto__placeholder-icon svg { width: 22px; height: 22px; }
+.prodejna-foto__placeholder-text {
+  font-family: var(--fb);
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.kontakt-cta-bar {
+  background: var(--black);
+  padding: 2.25rem var(--px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.kontakt-cta-bar__title {
+  font-family: var(--fd);
+  font-size: 22px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: -.01em;
+}
+.kontakt-cta-bar__sub {
+  font-family: var(--fb);
+  font-size: 12px;
+  color: #444;
+  margin-top: .35rem;
+}
+
+@media (max-width: 900px) {
+  .kontakt-new { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* ── BANNER ── */
+.banner-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.banner-box {
+  width: 70%;
+  max-width: 860px;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,.3);
+}
+.banner-box img { width: 100%; height: auto; display: block; }
+.banner-box__close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 36px; height: 36px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fb);
+  transition: background .2s;
+}
+.banner-box__close:hover { background: #333; }
+.kontakt-new {
+  background: #F7F6F3;
+  border-top: 3px solid var(--gold);
+  padding: var(--space-xl) var(--px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+.kontakt-new .k-label {
+  font-family: var(--fd);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .6rem;
+}
+.kontakt-new .k-value {
+  font-family: var(--fd);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  line-height: 1.25;
+}
+.kontakt-new .k-value a { color: var(--black); transition: color .2s; }
+.kontakt-new .k-value a:hover { color: var(--gold-dark); }
+.kontakt-new .k-block { margin-bottom: 2rem; }
+.kontakt-new .k-block:last-child { margin-bottom: 0; }
+
+.kontakt-new .k-hours { display: flex; flex-direction: column; gap: .7rem; }
+.kontakt-new .k-hour-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: .7rem;
+  border-bottom: 1px solid var(--border);
+}
+.kontakt-new .k-hour-row:last-child { border-bottom: none; padding-bottom: 0; }
+.kontakt-new .k-hour-day { font-family: var(--fb); font-size: 14px; color: #888; }
+.kontakt-new .k-hour-time {
+  font-family: var(--fd);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: .03em;
+}
+.kontakt-new .k-hour-time--closed { color: #ccc; }
+
+.prodejna-foto {
+  margin-top: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--gray-light);
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.prodejna-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.prodejna-foto__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  text-align: center;
+}
+.prodejna-foto__placeholder-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prodejna-foto__placeholder-icon svg { width: 22px; height: 22px; }
+.prodejna-foto__placeholder-text {
+  font-family: var(--fb);
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.kontakt-cta-bar {
+  background: var(--black);
+  padding: 2.25rem var(--px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.kontakt-cta-bar__title {
+  font-family: var(--fd);
+  font-size: 22px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: -.01em;
+}
+.kontakt-cta-bar__sub {
+  font-family: var(--fb);
+  font-size: 12px;
+  color: #444;
+  margin-top: .35rem;
+}
+
+/* ── BANNER (zakomentovaný — odkomentuj když chceš použít) ── */
+.banner-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.banner-box {
+  width: 70%;
+  max-width: 860px;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,.3);
+}
+.banner-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.banner-box__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-family: var(--fb);
+  transition: background .2s;
+}
+.banner-box__close:hover { background: #333; }
+
 /* ── REVEAL ANIMATION ── */
 .reveal {
   opacity: 0;

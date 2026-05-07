@@ -1,334 +1,335 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Kola & doplňky – MK Bike Shop Přerov. Aktuální výběr kol, akce a tipy. Helmy, pití, světla a příslušenství.">
-<title>Kola & doplňky – MK Bike Shop Přerov</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kola & doplňky – MK Bike Shop Přerov. Kellys, Author, Superior, Stevens. Horská, silniční, gravel, elektrokola. Helmy, světla, příslušenství."
+    />
+    <title>Kola & doplňky – MK Bike Shop Přerov</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="img/favicon_mk.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="topbar__item">
+        <svg viewBox="0 0 13 13" fill="none">
+          <path
+            d="M6.5 1C4.57 1 3 2.57 3 4.5c0 2.72 3.5 6.5 3.5 6.5S10 7.22 10 4.5C10 2.57 8.43 1 6.5 1zm0 4.75a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"
+            fill="#0a0a0a"
+          />
+        </svg>
+        Škodova 1, Přerov
+      </div>
+      <div class="topbar__item">
+        <svg viewBox="0 0 13 13" fill="none">
+          <path
+            d="M2 2h3l1.5 3-2 1.5a7.5 7.5 0 003 3L9 7.5l3 1.5v3s-2 1-3.5 1C4 13 0 9 0 5c0-1.5 1-3 1-3H2z"
+            stroke="#0a0a0a"
+            stroke-width="1"
+            stroke-linejoin="round"
+          />
+        </svg>
+        +420 123 456 789
+      </div>
+    </div>
 
-<div class="topbar">
-  <div class="topbar__item">
-    <svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4.57 1 3 2.57 3 4.5c0 2.72 3.5 6.5 3.5 6.5S10 7.22 10 4.5C10 2.57 8.43 1 6.5 1zm0 4.75a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z" fill="#0a0a0a"/></svg>
-    Škodova 1, Přerov
-  </div>
-  <div class="topbar__item">
-    <svg viewBox="0 0 13 13" fill="none"><path d="M2 2h3l1.5 3-2 1.5a7.5 7.5 0 003 3L9 7.5l3 1.5v3s-2 1-3.5 1C4 13 0 9 0 5c0-1.5 1-3 1-3H2z" stroke="#0a0a0a" stroke-width="1" stroke-linejoin="round"/></svg>
-    +420 123 456 789
-  </div>
-</div>
+    <nav class="nav" id="mainNav">
+      <a href="index.html" class="nav__logo">
+        <img src="MK_bike_shop_bez_pozadi.png" alt="MK Bike Shop logo" />
+        <span class="nav__logo-name">MK Bike Shop</span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Úvod</a>
+        <a href="kola.html" class="nav__link active">Kola & doplňky</a>
+        <a href="servis.html" class="nav__link">Servis & díly</a>
+        <a href="index.html#onas" class="nav__link">O nás</a>
+        <a href="kontakt.html" class="nav__cta">Kontakt</a>
+      </div>
+      <div class="nav__toggle" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html" class="nav__link" onclick="toggleNav()">Úvod</a>
+      <a href="kola.html" class="nav__link active" onclick="toggleNav()"
+        >Kola & doplňky</a
+      >
+      <a href="servis.html" class="nav__link" onclick="toggleNav()"
+        >Servis & díly</a
+      >
+      <a href="index.html#onas" class="nav__link" onclick="toggleNav()"
+        >O nás</a
+      >
+      <a href="kontakt.html" class="nav__cta" onclick="toggleNav()">Kontakt</a>
+    </div>
 
-<nav class="nav" id="mainNav">
-  <a href="index.html" class="nav__logo">
-    <img src="MK_bike_shop_bez_pozadi.png" alt="MK Bike Shop logo">
-    <span class="nav__logo-name">MK Bike Shop</span>
-  </a>
-  <div class="nav__links">
-    <a href="kola.html" class="nav__link active">Kola & doplňky</a>
-    <a href="servis.html" class="nav__link">Servis & díly</a>
-    <a href="index.html#onas" class="nav__link">O nás</a>
-    <a href="index.html#kontakt" class="nav__cta">Kontakt</a>
-  </div>
-  <div class="nav__toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
-</nav>
-<div class="nav-mobile" id="navMobile">
-  <a href="kola.html" class="nav__link active" onclick="toggleNav()">Kola & doplňky</a>
-  <a href="servis.html" class="nav__link" onclick="toggleNav()">Servis & díly</a>
-  <a href="index.html#onas" class="nav__link" onclick="toggleNav()">O nás</a>
-  <a href="index.html#kontakt" class="nav__cta" onclick="toggleNav()">Kontakt</a>
-</div>
+    <div class="gold-bar"></div>
 
-<div class="gold-bar"></div>
+    <div class="page-hero">
+      <div class="page-hero__eyebrow">Kola & doplňky</div>
+      <h1 class="page-hero__title">
+        Co u nás<br /><span class="accent">najdete</span>
+      </h1>
+      <p class="page-hero__sub">
+        Nabízíme kola od prověřených značek a veškeré příslušenství pro váš
+        pohodlný a bezpečný výjezd. Toto je jen přehled — v obchodě toho máme
+        mnohem více. Přijďte se podívat, rádi poradíme.
+      </p>
+    </div>
 
-<div class="page-hero">
-  <div class="page-hero__eyebrow">Aktuální výběr</div>
-  <h1 class="page-hero__title">Kola &amp;<br><span class="accent">doplňky</span></h1>
-  <p class="page-hero__sub">
-    Toto je jen malý výběr z toho, co u nás najdeš. V obchodě máme mnohem
-    více — přijď se podívat nebo nám zavolej, rádi poradíme.
-  </p>
-</div>
-
-<section class="section section--alt">
-
-  <!-- FILTER -->
-  <div class="kola-filter reveal">
-    <button class="kola-filter__btn kola-filter__btn--active" onclick="filterKola('kola', this)">Kola</button>
-    <button class="kola-filter__btn kola-filter__btn--inactive" onclick="filterKola('doplnky', this)">Doplňky</button>
-  </div>
-
-  <!-- KOLA -->
-  <div id="group-kola">
-    <div class="t-eyebrow reveal">Naše kola</div>
-    <div class="kola-grid reveal">
-
-      <!-- karta 1 — upravit dle potřeby -->
-      <div class="kola-card">
-        <div class="kola-card__img">
-          <!-- sem vložit: <img src="foto-kola.jpg" alt="název kola"> -->
-          <span class="kola-card__img-placeholder">🚵</span>
-          <span class="kola-card__badge kola-card__badge--tip">Náš tip</span>
-        </div>
-        <div class="kola-card__body">
-          <div class="kola-card__cat">Horské kolo · MTB</div>
-          <div class="kola-card__name">Trek Marlin 7</div>
-          <div class="kola-card__desc">
-            29", Shimano Deore 12s, hydraulické kotoučové brzdy.
-            Spolehlivý hardtail pro každý terén.
+    <!-- ZNAČKY -->
+    <section class="section">
+      <div class="t-eyebrow reveal">Značky</div>
+      <h2 class="t-title reveal">
+        Kola která <span class="accent">prodáváme</span>
+      </h2>
+      <p class="t-body reveal" style="max-width: 600px; margin-bottom: 2.5rem">
+        Spolupracujeme s prověřenými výrobci — každou značku osobně známe a za
+        její kvalitou si stojíme.
+      </p>
+      <div class="znacky-grid reveal">
+        <div class="znacka-card">
+          <div class="znacka-card__name">Kellys</div>
+          <div class="znacka-card__desc">
+            Slovenský výrobce s dlouhou tradicí. Skvělý poměr cena/výkon pro
+            horská, trekkingová i dětská kola. Oblíbená volba pro každého, kdo
+            hledá spolehlivé kolo bez zbytečného přeplácení.
           </div>
-          <div class="kola-card__footer">
-            <div>
-              <span class="kola-card__price">24 990 Kč</span>
+          <span class="znacka-card__tag">MTB · Trekking · Kids · E-bike</span>
+        </div>
+        <div class="znacka-card">
+          <div class="znacka-card__name">Author</div>
+          <div class="znacka-card__desc">
+            Česká značka s důrazem na kvalitu a dostupnost. Nabízí široký
+            sortiment — od dětských kol přes trekkingová až po výkonná silniční
+            a horská kola pro náročnější jezdce.
+          </div>
+          <span class="znacka-card__tag">Road · Trekking · MTB · E-bike</span>
+        </div>
+        <div class="znacka-card">
+          <div class="znacka-card__name">Superior</div>
+          <div class="znacka-card__desc">
+            Prémiová kola pro náročné jezdce. Od XC závodů po enduro a gravel —
+            Superior staví kola, která zvládnou opravdu náročný terén i dlouhé
+            kilometry na asfaltu.
+          </div>
+          <span class="znacka-card__tag">MTB · Gravel · Road · E-MTB</span>
+        </div>
+        <div class="znacka-card">
+          <div class="znacka-card__name">Stevens</div>
+          <div class="znacka-card__desc">
+            Německá preciznost a spolehlivost. Stevens kola jsou stavěna s
+            důrazem na detail a výdrž. Silniční i horská kola pro ty, kdo vědí
+            co chtějí a nechtějí dělat kompromisy.
+          </div>
+          <span class="znacka-card__tag">Road · MTB · Gravel · E-bike</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="gold-bar"></div>
+
+    <!-- DOPLŇKY -->
+    <section class="section section--alt">
+      <div class="t-eyebrow reveal">Příslušenství</div>
+      <h2 class="t-title reveal">
+        Doplňky & <span class="accent">vybavení</span>
+      </h2>
+      <p class="t-body reveal" style="max-width: 600px; margin-bottom: 2.5rem">
+        Kromě kol nabízíme také veškeré příslušenství pro bezpečnou a pohodlnou
+        jízdu. Skladem držíme to nejdůležitější — pokud hledáte něco
+        specifického, zeptejte se nás.
+      </p>
+      <div class="doplnky-grid reveal">
+        <div class="doplnky-kat">
+          <div class="doplnky-kat__dot"></div>
+          <div>
+            <div class="doplnky-kat__name">Helmy & ochrana</div>
+            <div class="doplnky-kat__sub">
+              Silniční, MTB i city helmy různých velikostí a značek
             </div>
-            <span class="kola-card__tag">MTB</span>
           </div>
         </div>
-      </div>
-
-      <!-- karta 2 -->
-      <div class="kola-card">
-        <div class="kola-card__img" style="background:#e8e5e0">
-          <span class="kola-card__img-placeholder">🚴</span>
-          <span class="kola-card__badge kola-card__badge--akce">Akce</span>
-        </div>
-        <div class="kola-card__body">
-          <div class="kola-card__cat">Silniční kolo · Road</div>
-          <div class="kola-card__name">Giant Contend 2</div>
-          <div class="kola-card__desc">
-            Hliníkový rám, Shimano Claris 2x8, kotoučové brzdy.
-            Ideální začátek na silnici.
-          </div>
-          <div class="kola-card__footer">
-            <div>
-              <span class="kola-card__price">18 500 Kč</span>
-              <span class="kola-card__price-old">22 000 Kč</span>
+        <div class="doplnky-kat">
+          <div class="doplnky-kat__dot"></div>
+          <div>
+            <div class="doplnky-kat__name">Osvětlení</div>
+            <div class="doplnky-kat__sub">
+              Přední i zadní světla, nabíjecí i na baterie
             </div>
-            <span class="kola-card__tag">Road</span>
           </div>
         </div>
-      </div>
-
-      <!-- karta 3 -->
-      <div class="kola-card">
-        <div class="kola-card__img" style="background:#ebe8e2">
-          <span class="kola-card__img-placeholder">⚡</span>
-          <span class="kola-card__badge kola-card__badge--nova">Novinka</span>
-        </div>
-        <div class="kola-card__body">
-          <div class="kola-card__cat">Elektrokolo · E-bike</div>
-          <div class="kola-card__name">Cube Reaction Hybrid</div>
-          <div class="kola-card__desc">
-            Bosch Performance CX 85 Nm, baterie 625 Wh, dojezd až 130 km.
-            E-MTB pro náročné výjezdy.
-          </div>
-          <div class="kola-card__footer">
-            <div>
-              <span class="kola-card__price">79 900 Kč</span>
+        <div class="doplnky-kat">
+          <div class="doplnky-kat__dot"></div>
+          <div>
+            <div class="doplnky-kat__name">Zámky</div>
+            <div class="doplnky-kat__sub">
+              Lankové, řetězové i U-zámky pro spolehlivé zabezpečení
             </div>
-            <span class="kola-card__tag">E-bike</span>
           </div>
         </div>
-      </div>
-
-      <!-- karta 4 — prázdná šablona pro přidání -->
-      <div class="kola-card">
-        <div class="kola-card__img" style="background:#e4e1db">
-          <span class="kola-card__img-placeholder">🚲</span>
-        </div>
-        <div class="kola-card__body">
-          <div class="kola-card__cat">Gravel · Cestovní</div>
-          <div class="kola-card__name">Název kola</div>
-          <div class="kola-card__desc">
-            Popis kola — parametry, výbava, pro koho je určeno.
-          </div>
-          <div class="kola-card__footer">
-            <div>
-              <span class="kola-card__price">0 000 Kč</span>
+        <div class="doplnky-kat">
+          <div class="doplnky-kat__dot"></div>
+          <div>
+            <div class="doplnky-kat__name">Pití & lahve</div>
+            <div class="doplnky-kat__sub">
+              Lahve, košíky, hydratační batohy na každou trasu
             </div>
-            <span class="kola-card__tag">Gravel</span>
+          </div>
+        </div>
+        <div class="doplnky-kat">
+          <div class="doplnky-kat__dot"></div>
+          <div>
+            <div class="doplnky-kat__name">Batohy & brašny</div>
+            <div class="doplnky-kat__sub">
+              Na výlety, bikepacking i každodenní dojíždění
+            </div>
+          </div>
+        </div>
+        <div class="doplnky-kat">
+          <div class="doplnky-kat__dot"></div>
+          <div>
+            <div class="doplnky-kat__name">A mnohem více</div>
+            <div class="doplnky-kat__sub">
+              Blatníky, počítače, rukavice, oblečení... přijďte se podívat
+            </div>
           </div>
         </div>
       </div>
 
-    </div>
-  </div>
-
-  <!-- DOPLNKY -->
-  <div id="group-doplnky" style="display:none">
-    <div class="t-eyebrow reveal">Příslušenství & doplňky</div>
-    <div class="kola-grid reveal">
-
-      <div class="kola-card">
-        <div class="kola-card__img" style="background:#e8e5e0">
-          <span class="kola-card__img-placeholder">⛑️</span>
-          <span class="kola-card__badge kola-card__badge--tip">Náš tip</span>
+      <div class="come-in reveal">
+        <div class="come-in__text">
+          V obchodě máme <span>mnohem více</span> než tady vidíte.<br />
+          Přijďte se podívat — rádi poradíme s výběrem.
         </div>
-        <div class="kola-card__body">
-          <div class="kola-card__cat">Ochrana · Helma</div>
-          <div class="kola-card__name">Helmy na kolo</div>
-          <div class="kola-card__desc">
-            Silniční, MTB i city helmy od předních značek. Různé velikosti
-            a barevné varianty skladem.
-          </div>
-          <div class="kola-card__footer">
-            <div><span class="kola-card__price">od 890 Kč</span></div>
-            <span class="kola-card__tag">Bezpečnost</span>
-          </div>
-        </div>
+        <a href="kontakt.html" class="btn btn--gold">Kde nás najdete</a>
       </div>
+    </section>
 
-      <div class="kola-card">
-        <div class="kola-card__img" style="background:#ebe8e2">
-          <span class="kola-card__img-placeholder">💡</span>
-        </div>
-        <div class="kola-card__body">
-          <div class="kola-card__cat">Osvětlení</div>
-          <div class="kola-card__name">Světla & osvětlení</div>
-          <div class="kola-card__desc">
-            Přední i zadní světla, nabíjecí i na baterie. Od základního
-            vybavení po výkonné MTB světlomety.
+    <footer class="footer">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="MK_bike_shop_bez_pozadi.png" alt="MK Bike Shop" />
+            <span class="footer__logo-name">MK Bike Shop</span>
           </div>
-          <div class="kola-card__footer">
-            <div><span class="kola-card__price">od 290 Kč</span></div>
-            <span class="kola-card__tag">Světla</span>
+          <p class="footer__tagline">
+            Specializovaný obchod a servis jízdních kol v Přerově. Přes 20 let s
+            vámi na každé cestě.
+          </p>
+        </div>
+        <div>
+          <div class="footer__col-title">Stránky</div>
+          <div class="footer__links">
+            <a href="kola.html" class="footer__link">Kola & doplňky</a>
+            <a href="servis.html" class="footer__link">Servis & opravy</a>
+            <a href="servis.html#dily" class="footer__link">Náhradní díly</a>
+            <a href="servis.html#prestavby" class="footer__link">Přestavby</a>
+            <a href="index.html#onas" class="footer__link">O nás</a>
+            <a href="kontakt.html" class="footer__link">Kontakt</a>
           </div>
         </div>
-      </div>
-
-      <div class="kola-card">
-        <div class="kola-card__img" style="background:#e4e1db">
-          <span class="kola-card__img-placeholder">🥤</span>
-        </div>
-        <div class="kola-card__body">
-          <div class="kola-card__cat">Hydratace</div>
-          <div class="kola-card__name">Pití & láhve</div>
-          <div class="kola-card__desc">
-            Cyklistické lahve, košíky na lahve, hydratační batohy.
-            Vše pro pohodlnou hydrataci na cestě.
+        <div>
+          <div class="footer__col-title">Kontakt</div>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 13 13" fill="none">
+              <path
+                d="M6.5 1C4.57 1 3 2.57 3 4.5c0 2.72 3.5 6.5 3.5 6.5S10 7.22 10 4.5C10 2.57 8.43 1 6.5 1z"
+                fill="#F5B800"
+              />
+            </svg>
+            <span>Škodova 1, 750 00 Přerov</span>
           </div>
-          <div class="kola-card__footer">
-            <div><span class="kola-card__price">od 120 Kč</span></div>
-            <span class="kola-card__tag">Hydratace</span>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 13 13" fill="none">
+              <path
+                d="M2 2h3l1.5 3-2 1.5a7.5 7.5 0 003 3L9 7.5l3 1.5v3s-2 1-3.5 1C4 13 0 9 0 5c0-1.5 1-3 1-3H2z"
+                stroke="#F5B800"
+                stroke-width="1"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <a href="tel:+420123456789">+420 123 456 789</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 13 13" fill="none">
+              <path
+                d="M2 3h9a1 1 0 011 1v5a1 1 0 01-1 1H2a1 1 0 01-1-1V4a1 1 0 011-1z"
+                stroke="#F5B800"
+                stroke-width="1"
+              />
+              <path
+                d="M1.5 3.5l5 3.5 5-3.5"
+                stroke="#F5B800"
+                stroke-width="1"
+              />
+            </svg>
+            <a href="mailto:info@mkbikeshop.cz">info@mkbikeshop.cz</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Otevírací doba</div>
+          <div class="footer__hour-row">
+            <span class="footer__hour-day">Po – Pá</span
+            ><span class="footer__hour-time">9:00 – 17:00</span>
+          </div>
+          <div class="footer__hour-row">
+            <span class="footer__hour-day">Sobota</span
+            ><span class="footer__hour-time">9:00 – 12:00</span>
+          </div>
+          <div class="footer__hour-row">
+            <span class="footer__hour-day">Neděle</span
+            ><span class="footer__hour-time" style="color: #2e2e2e"
+              >Zavřeno</span
+            >
           </div>
         </div>
       </div>
-
-      <div class="kola-card">
-        <div class="kola-card__img" style="background:#e0ddd8">
-          <span class="kola-card__img-placeholder">🔒</span>
-        </div>
-        <div class="kola-card__body">
-          <div class="kola-card__cat">Zabezpečení</div>
-          <div class="kola-card__name">Zámky na kolo</div>
-          <div class="kola-card__desc">
-            Lankové, řetězové i U-zámky od spolehlivých značek.
-            Pro město i náročnější zabezpečení.
-          </div>
-          <div class="kola-card__footer">
-            <div><span class="kola-card__price">od 350 Kč</span></div>
-            <span class="kola-card__tag">Zabezpečení</span>
-          </div>
+      <div class="footer__bottom">
+        <span class="footer__copy"
+          >© 2025 <span>MK Bike Shop</span> · Přerov · Všechna práva
+          vyhrazena</span
+        >
+        <div class="footer__bottom-links">
+          <a href="ochrana-udaju.html" class="footer__bottom-link"
+            >Ochrana osobních údajů</a
+          >
+          <a href="cookies.html" class="footer__bottom-link">Cookies</a>
         </div>
       </div>
+    </footer>
 
-    </div>
-  </div>
-
-  <div class="kola-note reveal">
-    Toto je jen malý výběr z naší nabídky —
-    <strong>v obchodě máme mnohem více kol i doplňků.</strong><br>
-    Přijďte se podívat nebo nám zavolejte, rádi poradíme a pomůžeme s výběrem.
-  </div>
-
-</section>
-
-<div class="cta-banner cta-banner--dark reveal">
-  <div>
-    <div class="cta-banner__title">Přijďte k nám<br>osobně.</div>
-    <div class="cta-banner__sub">Škodova 1, Přerov &nbsp;·&nbsp; Po–Pá 9–17 &nbsp;·&nbsp; So 9–12</div>
-  </div>
-  <a href="index.html#kontakt" class="btn btn--gold">Zobrazit na mapě</a>
-</div>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <div>
-      <div class="footer__logo">
-        <img src="MK_bike_shop_bez_pozadi.png" alt="MK Bike Shop">
-        <span class="footer__logo-name">MK Bike Shop</span>
-      </div>
-      <p class="footer__tagline">Specializovaný obchod a servis jízdních kol v Přerově. Přes 20 let s vámi na každé cestě.</p>
-    </div>
-    <div>
-      <div class="footer__col-title">Navigace</div>
-      <div class="footer__links">
-        <a href="kola.html" class="footer__link">Kola & doplňky</a>
-        <a href="servis.html" class="footer__link">Servis & opravy</a>
-        <a href="servis.html#dily" class="footer__link">Náhradní díly</a>
-        <a href="servis.html#prestavby" class="footer__link">Přestavby</a>
-        <a href="index.html#onas" class="footer__link">O nás</a>
-        <a href="index.html#kontakt" class="footer__link">Kontakt</a>
-      </div>
-    </div>
-    <div>
-      <div class="footer__col-title">Kontakt</div>
-      <div class="footer__contact-item">
-        <svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4.57 1 3 2.57 3 4.5c0 2.72 3.5 6.5 3.5 6.5S10 7.22 10 4.5C10 2.57 8.43 1 6.5 1z" fill="#F5B800"/></svg>
-        <span>Škodova 1, 750 00 Přerov</span>
-      </div>
-      <div class="footer__contact-item">
-        <svg viewBox="0 0 13 13" fill="none"><path d="M2 2h3l1.5 3-2 1.5a7.5 7.5 0 003 3L9 7.5l3 1.5v3s-2 1-3.5 1C4 13 0 9 0 5c0-1.5 1-3 1-3H2z" stroke="#F5B800" stroke-width="1" stroke-linejoin="round"/></svg>
-        <a href="tel:+420123456789">+420 123 456 789</a>
-      </div>
-      <div class="footer__contact-item">
-        <svg viewBox="0 0 13 13" fill="none"><path d="M2 3h9a1 1 0 011 1v5a1 1 0 01-1 1H2a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#F5B800" stroke-width="1"/><path d="M1.5 3.5l5 3.5 5-3.5" stroke="#F5B800" stroke-width="1"/></svg>
-        <a href="mailto:info@mkbikeshop.cz">info@mkbikeshop.cz</a>
-      </div>
-    </div>
-    <div>
-      <div class="footer__col-title">Otevírací doba</div>
-      <div class="footer__hour-row"><span class="footer__hour-day">Po – Pá</span><span class="footer__hour-time">9:00 – 17:00</span></div>
-      <div class="footer__hour-row"><span class="footer__hour-day">Sobota</span><span class="footer__hour-time">9:00 – 12:00</span></div>
-      <div class="footer__hour-row"><span class="footer__hour-day">Neděle</span><span class="footer__hour-time" style="color:#2e2e2e">Zavřeno</span></div>
-    </div>
-  </div>
-  <div class="footer__bottom">
-    <span class="footer__copy">© 2025 <span>MK Bike Shop</span> · Přerov · Všechna práva vyhrazena</span>
-    <div class="footer__bottom-links">
-      <a href="kola.html" class="footer__bottom-link">Kola</a>
-      <a href="servis.html" class="footer__bottom-link">Servis</a>
-      <a href="index.html#kontakt" class="footer__bottom-link">Kontakt</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-function toggleNav() { document.getElementById('navMobile').classList.toggle('open'); }
-window.addEventListener('scroll', () => {
-  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 10);
-});
-
-function filterKola(group, btn) {
-  document.getElementById('group-kola').style.display = group === 'kola' ? 'block' : 'none';
-  document.getElementById('group-doplnky').style.display = group === 'doplnky' ? 'block' : 'none';
-  document.querySelectorAll('.kola-filter__btn').forEach(b => {
-    b.classList.remove('kola-filter__btn--active');
-    b.classList.add('kola-filter__btn--inactive');
-  });
-  btn.classList.add('kola-filter__btn--active');
-  btn.classList.remove('kola-filter__btn--inactive');
-}
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 100); observer.unobserve(e.target); }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-</body>
+    <script>
+      function toggleNav() {
+        document.getElementById("navMobile").classList.toggle("open");
+      }
+      window.addEventListener("scroll", () => {
+        document
+          .getElementById("mainNav")
+          .classList.toggle("scrolled", window.scrollY > 10);
+      });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => e.target.classList.add("visible"), i * 100);
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+    <script src="cookies-bar.js"></script>
+  </body>
 </html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ochrana osobních údajů – MK Bike Shop Přerov.">
+<title>Ochrana osobních údajů – MK Bike Shop Přerov</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.legal-page {
+  padding: var(--space-xl) var(--px);
+  max-width: 860px;
+}
+.legal-page h2 {
+  font-family: var(--fd);
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--black);
+  margin: 2.5rem 0 1rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+.legal-page h2:first-of-type {
+  margin-top: 2rem;
+  padding-top: 0;
+  border-top: none;
+}
+.legal-page p {
+  font-family: var(--fb);
+  font-size: 14.5px;
+  color: var(--body);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.legal-page p:last-child { margin-bottom: 0; }
+.legal-page strong { color: var(--black); font-weight: 600; }
+.legal-page ul {
+  list-style: none;
+  margin: .75rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.legal-page ul li {
+  font-family: var(--fb);
+  font-size: 14.5px;
+  color: var(--body);
+  line-height: 1.7;
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+}
+.legal-page ul li::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__item">
+    <svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4.57 1 3 2.57 3 4.5c0 2.72 3.5 6.5 3.5 6.5S10 7.22 10 4.5C10 2.57 8.43 1 6.5 1zm0 4.75a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z" fill="#0a0a0a"/></svg>
+    Škodova 1, Přerov
+  </div>
+  <div class="topbar__item">
+    <svg viewBox="0 0 13 13" fill="none"><path d="M2 2h3l1.5 3-2 1.5a7.5 7.5 0 003 3L9 7.5l3 1.5v3s-2 1-3.5 1C4 13 0 9 0 5c0-1.5 1-3 1-3H2z" stroke="#0a0a0a" stroke-width="1" stroke-linejoin="round"/></svg>
+    +420 123 456 789
+  </div>
+</div>
+
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav__logo">
+    <img src="MK_bike_shop_bez_pozadi.png" alt="MK Bike Shop logo">
+    <span class="nav__logo-name">MK Bike Shop</span>
+  </a>
+  <div class="nav__links">
+    <a href="index.html" class="nav__link">Úvod</a>
+    <a href="kola.html" class="nav__link">Kola & doplňky</a>
+    <a href="servis.html" class="nav__link">Servis & díly</a>
+    <a href="index.html#onas" class="nav__link">O nás</a>
+    <a href="kontakt.html" class="nav__cta">Kontakt</a>
+  </div>
+  <div class="nav__toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html" class="nav__link" onclick="toggleNav()">Úvod</a>
+  <a href="kola.html" class="nav__link" onclick="toggleNav()">Kola & doplňky</a>
+  <a href="servis.html" class="nav__link" onclick="toggleNav()">Servis & díly</a>
+  <a href="index.html#onas" class="nav__link" onclick="toggleNav()">O nás</a>
+  <a href="kontakt.html" class="nav__cta" onclick="toggleNav()">Kontakt</a>
+</div>
+
+<div class="gold-bar"></div>
+
+<div class="page-hero">
+  <div class="page-hero__eyebrow">Právní dokumenty</div>
+  <h1 class="page-hero__title">Ochrana<br><span class="accent">osobních údajů</span></h1>
+</div>
+
+<div class="legal-page">
+
+  <h2>Správce osobních údajů</h2>
+  <p>
+    Správcem osobních údajů je <strong>Martin Kolář</strong>, IČO: 73254568,
+    se sídlem Seifertova 492/4, 750 02 Přerov, zapsaný v živnostenském
+    rejstříku Magistrátu města Přerova (dále jen „správce").
+  </p>
+  <p>
+    Kontaktní e-mail: <strong>info@mkbikeshop.cz</strong><br>
+    Telefon: <strong>+420 123 456 789</strong>
+  </p>
+
+  <h2>Jaké údaje zpracováváme</h2>
+  <p>
+    Tento web je čistě prezentačního charakteru. Nezpracováváme osobní
+    údaje návštěvníků nad rámec technicky nezbytných cookies
+    (viz Zásady používání cookies). Web neobsahuje kontaktní formuláře
+    ani registraci uživatelů.
+  </p>
+
+  <h2>Cookies a analytické nástroje</h2>
+  <p>
+    Web může používat technické cookies nezbytné pro jeho fungování.
+    Analytické nebo marketingové cookies jsou použity pouze s vaším
+    souhlasem vyjádřeným prostřednictvím lišty při první návštěvě webu.
+  </p>
+
+  <h2>Práva subjektů údajů</h2>
+  <p>Jako subjekt údajů máte právo:</p>
+  <ul>
+    <li>na přístup ke svým osobním údajům</li>
+    <li>na opravu nepřesných nebo neúplných údajů</li>
+    <li>na výmaz osobních údajů („právo být zapomenut")</li>
+    <li>na omezení zpracování</li>
+    <li>vznést námitku proti zpracování</li>
+    <li>podat stížnost u dozorového úřadu (Úřad pro ochranu osobních údajů, www.uoou.cz)</li>
+  </ul>
+  <p>
+    Pro uplatnění svých práv nás kontaktujte na e-mailu
+    <strong>info@mkbikeshop.cz</strong>.
+  </p>
+
+  <h2>Zabezpečení</h2>
+  <p>
+    Přijímáme přiměřená technická a organizační opatření k ochraně
+    veškerých zpracovávaných údajů před neoprávněným přístupem,
+    ztrátou nebo zničením.
+  </p>
+
+  <h2>Změny zásad</h2>
+  <p>
+    Tyto zásady ochrany osobních údajů mohou být průběžně aktualizovány.
+    Aktuální verze je vždy dostupná na této stránce.
+  </p>
+  <p style="color:var(--muted);font-size:13px">Platnost od: 1. 1. 2025</p>
+
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__logo">
+        <img src="MK_bike_shop_bez_pozadi.png" alt="MK Bike Shop">
+        <span class="footer__logo-name">MK Bike Shop</span>
+      </div>
+      <p class="footer__tagline">Specializovaný obchod a servis jízdních kol v Přerově. Přes 20 let s vámi na každé cestě.</p>
+    </div>
+    <div>
+      <div class="footer__col-title">Stránky</div>
+      <div class="footer__links">
+        <a href="kola.html" class="footer__link">Kola & doplňky</a>
+        <a href="servis.html" class="footer__link">Servis & opravy</a>
+        <a href="index.html#onas" class="footer__link">O nás</a>
+        <a href="kontakt.html" class="footer__link">Kontakt</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__col-title">Kontakt</div>
+      <div class="footer__contact-item">
+        <svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4.57 1 3 2.57 3 4.5c0 2.72 3.5 6.5 3.5 6.5S10 7.22 10 4.5C10 2.57 8.43 1 6.5 1z" fill="#F5B800"/></svg>
+        <span>Škodova 1, 750 00 Přerov</span>
+      </div>
+      <div class="footer__contact-item">
+        <svg viewBox="0 0 13 13" fill="none"><path d="M2 2h3l1.5 3-2 1.5a7.5 7.5 0 003 3L9 7.5l3 1.5v3s-2 1-3.5 1C4 13 0 9 0 5c0-1.5 1-3 1-3H2z" stroke="#F5B800" stroke-width="1" stroke-linejoin="round"/></svg>
+        <a href="tel:+420123456789">+420 123 456 789</a>
+      </div>
+      <div class="footer__contact-item">
+        <svg viewBox="0 0 13 13" fill="none"><path d="M2 3h9a1 1 0 011 1v5a1 1 0 01-1 1H2a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#F5B800" stroke-width="1"/><path d="M1.5 3.5l5 3.5 5-3.5" stroke="#F5B800" stroke-width="1"/></svg>
+        <a href="mailto:info@mkbikeshop.cz">info@mkbikeshop.cz</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__col-title">Otevírací doba</div>
+      <div class="footer__hour-row"><span class="footer__hour-day">Po – Pá</span><span class="footer__hour-time">9:00 – 17:00</span></div>
+      <div class="footer__hour-row"><span class="footer__hour-day">Sobota</span><span class="footer__hour-time">9:00 – 12:00</span></div>
+      <div class="footer__hour-row"><span class="footer__hour-day">Neděle</span><span class="footer__hour-time" style="color:#2e2e2e">Zavřeno</span></div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__copy">© 2025 <span>MK Bike Shop</span> · Přerov · Všechna práva vyhrazena</span>
+    <div class="footer__bottom-links">
+      <a href="ochrana-udaju.html" class="footer__bottom-link">Ochrana osobních údajů</a>
+      <a href="cookies.html" class="footer__bottom-link">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav() { document.getElementById('navMobile').classList.toggle('open'); }
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 10);
+});
+</script>
+<script src="cookies-bar.js"></script>
+</body>
+</html>
