@@ -7,445 +7,309 @@
 <title>MK Bike Shop – Přerov</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --gold: #F5B800;
-  --gold-dark: #C99600;
-  --black: #0a0a0a;
-  --white: #ffffff;
-  --gray-bg: #F7F6F3;
-  --border: #E8E5E0;
-  --text-muted: #888;
-  --text-body: #555;
-  --fd: 'Barlow Condensed', sans-serif;
-  --fb: 'Barlow', sans-serif;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--fb); background: var(--white); color: var(--black); overflow-x: hidden; }
-a { text-decoration: none; color: inherit; }
-img { display: block; max-width: 100%; }
-
-/* TOPBAR */
-.topbar {
-  background: var(--gold);
-  padding: .4rem 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 2rem;
-}
-.tb-item {
-  display: flex; align-items: center; gap: 6px;
-  font-family: var(--fb); font-size: 11px; font-weight: 600;
-  color: var(--black); letter-spacing: .03em;
-}
-.tb-item svg { width: 13px; height: 13px; flex-shrink: 0; }
-
-/* NAV */
-.nav {
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  padding: 0 2.5rem;
-  height: 58px;
-  display: flex; align-items: center; justify-content: space-between;
-  position: sticky; top: 0; z-index: 100;
-  transition: box-shadow .3s;
-}
-.nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.07); }
-.logo-wrap { display: flex; align-items: center; gap: 10px; }
-.logo-wrap img {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--black); padding: 3px; object-fit: contain;
-}
-.logo-name {
-  font-family: var(--fd); font-size: 17px; font-weight: 800;
-  color: var(--black); letter-spacing: .08em; text-transform: uppercase;
-}
-.nav-links { display: flex; align-items: center; gap: 2rem; }
-.nav-link {
-  font-family: var(--fb); font-size: 11px; font-weight: 600;
-  color: var(--text-muted); letter-spacing: .08em; text-transform: uppercase;
-  transition: color .2s;
-}
-.nav-link:hover, .nav-link.active { color: var(--black); }
-.nav-cta {
-  font-family: var(--fb); font-size: 11px; font-weight: 700;
-  color: var(--black); background: var(--gold);
-  padding: 8px 20px; border-radius: 4px;
-  letter-spacing: .06em; text-transform: uppercase;
-  transition: background .2s, transform .15s;
-}
-.nav-cta:hover { background: var(--gold-dark); transform: translateY(-1px); }
-
-/* Mobile nav */
-.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; transition: all .3s; }
-.nav-mobile { display: none; background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; flex-direction: column; gap: .5rem; }
-.nav-mobile.open { display: flex; }
-.nav-mobile .nav-link { font-size: 13px; padding: .5rem 0; border-bottom: 1px solid var(--border); }
-.nav-mobile .nav-cta { display: inline-block; margin-top: .5rem; text-align: center; }
-
-/* HERO */
-.hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 520px; }
-.hero-left {
-  background: var(--black); padding: 4rem 3rem;
-  display: flex; flex-direction: column; justify-content: space-between;
-  position: relative; overflow: hidden;
-}
-.hero-left::after {
-  content: '';
-  position: absolute; bottom: -60px; right: -60px;
-  width: 240px; height: 240px;
-  border: 40px solid rgba(245,184,0,.05);
-  border-radius: 50%;
-  pointer-events: none;
-}
-.hero-right {
-  background: var(--gold); padding: 4rem 3rem;
-  display: flex; flex-direction: column; justify-content: space-between;
-  position: relative; overflow: hidden;
-}
-.hero-right::before {
-  content: '';
-  position: absolute; top: -40px; left: -40px;
-  width: 180px; height: 180px;
-  border: 30px solid rgba(0,0,0,.06);
-  border-radius: 50%;
-  pointer-events: none;
-}
-.eyebrow {
-  font-family: var(--fd); font-size: 11px; font-weight: 700;
-  letter-spacing: .2em; text-transform: uppercase;
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 1.5rem;
-}
-.eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: currentColor; flex-shrink: 0; }
-.ey-light { color: #444; }
-.ey-dark { color: rgba(0,0,0,.45); }
-
-.hero-headline {
-  font-family: var(--fd);
-  font-size: clamp(54px, 7vw, 80px);
-  font-weight: 900; line-height: .9;
-  letter-spacing: -.01em; text-transform: uppercase;
-}
-.hw { color: var(--white); }
-.hg { color: var(--gold); }
-.hb { color: var(--black); }
-
-.hero-sub { font-family: var(--fb); font-size: 13.5px; color: #777; line-height: 1.65; margin-top: 1.5rem; max-width: 360px; }
-.hero-sub-dark { color: rgba(0,0,0,.55); }
-
-.hero-btn {
-  display: inline-block; font-family: var(--fd); font-size: 12px; font-weight: 700;
-  letter-spacing: .14em; text-transform: uppercase;
-  padding: 14px 30px; border-radius: 4px;
-  margin-top: 2rem; align-self: flex-start;
-  transition: opacity .2s, transform .15s;
-}
-.hero-btn:hover { opacity: .88; transform: translateY(-2px); }
-.btn-gf { background: var(--gold); color: var(--black); }
-.btn-df { background: var(--black); color: var(--gold); }
-
-.addr-card {
-  margin-top: 1.5rem;
-  background: rgba(0,0,0,.12); border-radius: 6px;
-  padding: .9rem 1.1rem;
-  display: flex; align-items: flex-start; gap: 9px;
-}
-.addr-card svg { width: 14px; height: 14px; flex-shrink: 0; margin-top: 2px; }
-.addr-info { font-family: var(--fb); font-size: 12px; color: rgba(0,0,0,.55); line-height: 1.55; }
-.addr-info strong { display: block; font-size: 13px; color: var(--black); margin-bottom: 2px; font-weight: 700; }
-
-/* TICKER */
-.ticker { background: var(--black); padding: .75rem 0; overflow: hidden; white-space: nowrap; }
-.ticker-track { display: inline-flex; animation: ticker 24s linear infinite; }
-.ticker-item { font-family: var(--fd); font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: .16em; text-transform: uppercase; padding: 0 1.5rem; }
-.ticker-sep { color: rgba(245,184,0,.3); font-size: 11px; padding: 0 .25rem; }
-@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-/* SERVICES */
-.services { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--border); }
-.svc {
-  padding: 1.75rem 1.5rem;
-  border-right: 1px solid var(--border); border-top: 1px solid var(--border);
-  transition: background .2s; cursor: pointer;
-}
-.svc:last-child { border-right: none; }
-.svc:hover { background: var(--gray-bg); }
-.svc:hover .svc-arrow { color: var(--black); transform: translateX(4px); }
-.svc-title { font-family: var(--fd); font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--black); margin-bottom: .4rem; }
-.svc-desc { font-family: var(--fb); font-size: 12px; color: var(--text-muted); line-height: 1.55; }
-.svc-arrow { font-size: 18px; color: var(--gold); margin-top: .9rem; display: block; transition: color .2s, transform .2s; }
-
-/* GOLD DIVIDER */
-.gold-bar { height: 3px; background: var(--gold); }
-
-/* O NÁS SECTION */
-.onas { display: grid; grid-template-columns: 1fr 1.4fr; align-items: stretch; }
-.onas-left {
-  background: var(--black); padding: 4rem 3rem;
-  display: flex; flex-direction: column; justify-content: space-between;
-}
-.onas-right { background: var(--gray-bg); padding: 4rem 3rem; }
-
-.onas-num {
-  font-family: var(--fd); font-size: 110px; font-weight: 900;
-  color: var(--gold); line-height: 1; letter-spacing: -.04em;
-}
-.onas-num-label {
-  font-family: var(--fd); font-size: 14px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .14em; color: #444;
-  margin-top: -.5rem;
-}
-.onas-values { display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem; }
-.oval { display: flex; align-items: flex-start; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid #1e1e1e; }
-.oval:last-child { border-bottom: none; }
-.oval-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 5px; }
-.oval-title { font-family: var(--fd); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--white); margin-bottom: 3px; }
-.oval-text { font-family: var(--fb); font-size: 12px; color: #666; line-height: 1.55; }
-
-.section-eyebrow {
-  font-family: var(--fd); font-size: 10px; font-weight: 700;
-  letter-spacing: .22em; text-transform: uppercase; color: var(--gold);
-  display: flex; align-items: center; gap: 10px; margin-bottom: .75rem;
-}
-.section-eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--gold); flex-shrink: 0; }
-.section-title {
-  font-family: var(--fd); font-size: clamp(30px, 4vw, 44px);
-  font-weight: 900; text-transform: uppercase;
-  letter-spacing: -.01em; line-height: 1; margin-bottom: 1.5rem;
-}
-.section-title .accent { color: var(--gold); }
-
-.onas-text p {
-  font-family: var(--fb); font-size: 14.5px; color: var(--text-body);
-  line-height: 1.75; margin-bottom: 1.1rem;
-}
-.onas-text p:last-child { margin-bottom: 0; }
-.onas-text strong { color: var(--black); font-weight: 600; }
-
-.onas-cta {
-  margin-top: 2rem;
-  display: flex; gap: 1rem; flex-wrap: wrap;
-}
-.cta-link {
-  font-family: var(--fd); font-size: 12px; font-weight: 700;
-  letter-spacing: .12em; text-transform: uppercase;
-  padding: 12px 26px; border-radius: 4px;
-  transition: opacity .2s, transform .15s;
-}
-.cta-link:hover { opacity: .88; transform: translateY(-1px); }
-.cta-gold { background: var(--gold); color: var(--black); }
-.cta-outline { background: transparent; color: var(--black); border: 2px solid var(--black); }
-
-/* FOOTER */
-.footer {
-  background: var(--black); padding: 1.25rem 2.5rem;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.footer-brand { font-family: var(--fd); font-size: 11px; font-weight: 700; color: #333; letter-spacing: .1em; text-transform: uppercase; }
-.footer-brand span { color: var(--gold); }
-.footer-links { display: flex; gap: 2rem; }
-.footer-link { font-family: var(--fb); font-size: 10px; color: #333; letter-spacing: .08em; text-transform: uppercase; transition: color .2s; }
-.footer-link:hover { color: var(--gold); }
-
-/* REVEAL */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* RESPONSIVE */
-@media (max-width: 960px) {
-  .topbar { justify-content: center; gap: 1rem; }
-  .nav { padding: 0 1.5rem; }
-  .nav-links { display: none; }
-  .nav-toggle { display: flex; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-left, .hero-right { padding: 3rem 1.75rem; }
-  .services { grid-template-columns: 1fr 1fr; }
-  .svc:nth-child(2) { border-right: none; }
-  .onas { grid-template-columns: 1fr; }
-  .onas-left, .onas-right { padding: 3rem 1.75rem; }
-  .onas-num { font-size: 80px; }
-  .footer { flex-direction: column; gap: 1rem; text-align: center; }
-  .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
-}
-@media (max-width: 560px) {
-  .topbar { flex-direction: column; gap: .35rem; padding: .5rem 1rem; }
-  .nav { padding: 0 1rem; }
-  .services { grid-template-columns: 1fr; }
-  .svc { border-right: none; }
-  .hero-left, .hero-right { padding: 2.5rem 1.25rem; }
-  .onas-left, .onas-right { padding: 2.5rem 1.25rem; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- TOPBAR -->
 <div class="topbar">
-  <div class="tb-item">
+  <div class="topbar__item">
     <svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4.57 1 3 2.57 3 4.5c0 2.72 3.5 6.5 3.5 6.5S10 7.22 10 4.5C10 2.57 8.43 1 6.5 1zm0 4.75a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z" fill="#0a0a0a"/></svg>
     Škodova 1, Přerov
   </div>
-  <div class="tb-item">
-    <svg viewBox="0 0 13 13" fill="none"><path d="M2 3h9a1 1 0 011 1v5a1 1 0 01-1 1H2a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#0a0a0a" stroke-width="1"/><path d="M1.5 3.5l5 3.5 5-3.5" stroke="#0a0a0a" stroke-width="1"/></svg>
+  <div class="topbar__item">
+    <svg viewBox="0 0 13 13" fill="none"><path d="M2 2h3l1.5 3-2 1.5a7.5 7.5 0 003 3L9 7.5l3 1.5v3s-2 1-3.5 1C4 13 0 9 0 5c0-1.5 1-3 1-3H2z" stroke="#0a0a0a" stroke-width="1" stroke-linejoin="round"/></svg>
     +420 123 456 789
   </div>
 </div>
 
+<!-- NAV -->
 <nav class="nav" id="mainNav">
-  <a href="index.html" class="logo-wrap">
+  <a href="index.html" class="nav__logo">
     <img src="MK_bike_shop_bez_pozadi.png" alt="MK Bike Shop logo">
-    <span class="logo-name">MK Bike Shop</span>
+    <span class="nav__logo-name">MK Bike Shop</span>
   </a>
-  <div class="nav-links">
-    <a href="kola.html" class="nav-link">Kola</a>
-    <a href="servis.html" class="nav-link">Servis & díly</a>
-    <a href="index.html#onas" class="nav-link">O nás</a>
-    <a href="kontakt.html" class="nav-cta">Kde nás najdeš</a>
+  <div class="nav__links">
+    <a href="kola.html" class="nav__link">Kola & doplňky</a>
+    <a href="servis.html" class="nav__link">Servis & díly</a>
+    <a href="#onas" class="nav__link">O nás</a>
+    <a href="#kontakt" class="nav__cta">Kontakt</a>
   </div>
-  <div class="nav-toggle" onclick="toggleNav()">
+  <div class="nav__toggle" onclick="toggleNav()" id="navToggle">
     <span></span><span></span><span></span>
   </div>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="kola.html" class="nav-link" onclick="toggleNav()">Kola</a>
-  <a href="servis.html" class="nav-link" onclick="toggleNav()">Servis & díly</a>
-  <a href="index.html#onas" class="nav-link" onclick="toggleNav()">O nás</a>
-  <a href="kontakt.html" class="nav-cta" onclick="toggleNav()">Kde nás najdeš</a>
+  <a href="kola.html" class="nav__link" onclick="toggleNav()">Kola & doplňky</a>
+  <a href="servis.html" class="nav__link" onclick="toggleNav()">Servis & díly</a>
+  <a href="#onas" class="nav__link" onclick="toggleNav()">O nás</a>
+  <a href="#kontakt" class="nav__cta" onclick="toggleNav()">Kontakt</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
+  <div class="hero__left">
     <div>
-      <div class="eyebrow ey-light">Specializovaný obchod</div>
-      <h1 class="hero-headline">
-        <span class="hw">Kola.</span><br>
-        <span class="hg">Vášeň.</span><br>
-        <span class="hw">Řemeslo.</span>
+      <div class="hero__eyebrow hero__eyebrow--light">Specializovaný obchod & servis</div>
+      <h1 class="hero__headline">
+        <span class="wh">Kola.</span><br>
+        <span class="wg">Servis.</span><br>
+        <span class="wh">Přestavby.</span>
       </h1>
-      <p class="hero-sub">Od horských tras po asfalt — vždy najdeš kolo, které ti sedí. Poradíme, ukážeme, vybavíme.</p>
+      <p class="hero__sub hero__sub--light">
+        Od horských tras po asfalt — vždy najdeš kolo, které ti sedí.
+        Poradíme, ukážeme, vybavíme.
+      </p>
     </div>
-    <a href="kola.html" class="hero-btn btn-gf">Prohlédnout kola</a>
+    <a href="kola.html" class="btn btn--gold">Kola & doplňky</a>
   </div>
-  <div class="hero-right">
-    <div>
-      <div class="eyebrow ey-dark">Servis & přestavby</div>
-      <h2 class="hero-headline">
-        <span class="hb">Přijďte</span><br>
-        <span class="hb">k nám.</span>
-      </h2>
-      <p class="hero-sub hero-sub-dark">Kolo opravíme, seřídíme nebo přestavíme. Stačí zastavit — jsme tu pro vás.</p>
-      <div class="addr-card">
-        <svg viewBox="0 0 14 14" fill="none"><path d="M7 1C5.07 1 3.5 2.57 3.5 4.5c0 2.72 3.5 6.5 3.5 6.5s3.5-3.78 3.5-6.5C10.5 2.57 8.93 1 7 1zm0 4.75a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z" fill="#0a0a0a"/></svg>
-        <div class="addr-info">
-          <strong>MK Bike Shop — Přerov</strong>
-          Škodova 1, 750 00 Přerov<br>
-          Po–Pá 9:00–17:00 &nbsp;·&nbsp; So 9:00–12:00
+  <div class="hero__right">
+    <div class="hero__addr">
+      <div class="hero__addr-eyebrow">Najdi nás</div>
+      <span class="hero__addr-street">Škodova 1</span>
+      <span class="hero__addr-city">Přerov</span>
+      <span class="hero__addr-psc">750 00</span>
+      <div class="hero__addr-divider"></div>
+      <div class="hero__hours">
+        <div class="hero__hour-item">
+          <span class="hero__hour-label">Po – Pá</span>
+          <span class="hero__hour-val">9:00 – 17:00</span>
+        </div>
+        <div class="hero__hour-item">
+          <span class="hero__hour-label">Sobota</span>
+          <span class="hero__hour-val">9:00 – 12:00</span>
+        </div>
+        <div class="hero__hour-item">
+          <span class="hero__hour-label">Neděle</span>
+          <span class="hero__hour-val hero__hour-val--closed">Zavřeno</span>
         </div>
       </div>
     </div>
-    <a href="kontakt.html" class="hero-btn btn-df">Jak nás najít</a>
+    <a href="#kontakt" class="btn btn--dark">Zobrazit na mapě</a>
   </div>
 </section>
 
+<!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-track">
-    <span class="ticker-item">Horská kola</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Silniční kola</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Gravel</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Elektrokola</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Náhradní díly</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Přestavby na míru</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Příslušenství</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Horská kola</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Silniční kola</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Gravel</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Elektrokola</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Náhradní díly</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Přestavby na míru</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Příslušenství</span><span class="ticker-sep">·</span>
+  <div class="ticker__track">
+    <span class="ticker__item">Horská kola</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Silniční kola</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Gravel</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Elektrokola</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Náhradní díly</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Přestavby na míru</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Helmy & přilby</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Příslušenství</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Horská kola</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Silniční kola</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Gravel</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Elektrokola</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Náhradní díly</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Přestavby na míru</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Helmy & přilby</span><span class="ticker__sep">·</span>
+    <span class="ticker__item">Příslušenství</span><span class="ticker__sep">·</span>
   </div>
 </div>
 
+<!-- SERVICES -->
 <div class="services">
-  <a href="kola.html" class="svc">
-    <div class="svc-title">Prodej kol</div>
-    <div class="svc-desc">Horská, silniční, gravel i elektrokola s odborným poradenstvím.</div>
-    <span class="svc-arrow">→</span>
+  <a href="kola.html" class="services__item">
+    <div class="services__title">Kola & doplňky</div>
+    <div class="services__desc">Aktuální výběr, akce a naše tipy — přijďte se podívat.</div>
+    <span class="services__arrow">→</span>
   </a>
-  <a href="servis.html" class="svc">
-    <div class="svc-title">Servis & opravy</div>
-    <div class="svc-desc">Sezonní prohlídky, seřízení převodů, opravy — rychle a spolehlivě.</div>
-    <span class="svc-arrow">→</span>
+  <a href="servis.html" class="services__item">
+    <div class="services__title">Servis & opravy</div>
+    <div class="services__desc">Přijďte s čímkoliv — opravíme, seřídíme, prohlédneme.</div>
+    <span class="services__arrow">→</span>
   </a>
-  <a href="servis.html#dily" class="svc">
-    <div class="svc-title">Náhradní díly</div>
-    <div class="svc-desc">Brzdy, pláště, řetězy, sedla — skladem i na objednávku.</div>
-    <span class="svc-arrow">→</span>
+  <a href="servis.html#prestavby" class="services__item">
+    <div class="services__title">Přestavby</div>
+    <div class="services__desc">Vlastní projekty na míru od A do Z. Tvé kolo, tvoje pravidla.</div>
+    <span class="services__arrow">→</span>
   </a>
-  <a href="servis.html#prestavby" class="svc">
-    <div class="svc-title">Přestavby</div>
-    <div class="svc-desc">Vlastní projekty od A do Z. Tvé kolo, tvoje pravidla.</div>
-    <span class="svc-arrow">→</span>
+  <a href="servis.html#dily" class="services__item">
+    <div class="services__title">Náhradní díly</div>
+    <div class="services__desc">Máme co potřebuješ — nebo seženeme. Široký sortiment.</div>
+    <span class="services__arrow">→</span>
   </a>
 </div>
 
 <div class="gold-bar"></div>
 
+<!-- O NÁS -->
 <section class="onas" id="onas">
-  <div class="onas-left">
+  <div class="onas__left">
     <div>
-      <div class="onas-num reveal">20+</div>
-      <div class="onas-num-label reveal">Let zkušeností</div>
+      <div class="onas__num reveal">20+</div>
+      <div class="onas__num-label reveal">Let zkušeností</div>
     </div>
-    <div class="onas-values reveal">
-      <div class="oval">
-        <div class="oval-dot"></div>
+    <div class="onas__values">
+      <div class="onas__value reveal">
+        <div class="onas__value-dot"></div>
         <div>
-          <div class="oval-title">Řemeslná preciznost</div>
-          <div class="oval-text">Každé kolo bereme jako vlastní. Žádné odbytí, žádné kompromisy.</div>
+          <div class="onas__value-title">Řemeslná preciznost</div>
+          <div class="onas__value-text">Každé kolo bereme jako vlastní. Žádné odbytí, žádné kompromisy v kvalitě.</div>
         </div>
       </div>
-      <div class="oval">
-        <div class="oval-dot"></div>
+      <div class="onas__value reveal">
+        <div class="onas__value-dot"></div>
         <div>
-          <div class="oval-title">Férové poradenství</div>
-          <div class="oval-text">Poradíme to, co ti skutečně sedí — ne co nám přináší největší marži.</div>
+          <div class="onas__value-title">Férové poradenství</div>
+          <div class="onas__value-text">Poradíme to, co ti skutečně sedí — ne to, co nám přináší největší marži.</div>
         </div>
       </div>
-      <div class="oval">
-        <div class="oval-dot"></div>
+      <div class="onas__value reveal">
+        <div class="onas__value-dot"></div>
         <div>
-          <div class="oval-title">Prověřené značky</div>
-          <div class="oval-text">Prodáváme jen to, za čím si stojíme.</div>
+          <div class="onas__value-title">Prověřené značky</div>
+          <div class="onas__value-text">Prodáváme jen to, za čím si stojíme. Komponenty, kterým věříme.</div>
         </div>
       </div>
     </div>
   </div>
-  <div class="onas-right">
-    <div class="section-eyebrow reveal">O nás</div>
-    <h2 class="section-title reveal">Kola jsou<br><span class="accent">naše vášeň.</span></h2>
-    <div class="onas-text reveal">
-      <p>MK Bike Shop vznikl z prostého důvodu — <strong>lásky k jízdě na kole</strong>. Přes 20 let se věnujeme tomu, aby zákazníci odjeli na kole, které jim skutečně sedí a funguje tak, jak má.</p>
-      <p>Nejsme velký řetězec. Jsme místní obchod v Přerově, kde každého zákazníka známe jménem a každé kolo dostane individuální péči. Ať přijdeš s problémem nebo snem o novém sestavení — jsme tu.</p>
-      <p>Věříme, že <strong>dobré kolo změní způsob, jak vnímáš svět kolem sebe.</strong> A rádi ti pomůžeme to zažít.</p>
+  <div class="onas__right">
+    <div class="t-eyebrow reveal">O nás</div>
+    <h2 class="t-title reveal">Kola jsou<br><span class="accent">naše vášeň.</span></h2>
+    <div class="reveal">
+      <p class="t-body">
+        MK Bike Shop vznikl z prostého důvodu — <strong>lásky k jízdě na kole</strong>.
+        Přes 20 let se věnujeme tomu, aby zákazníci odjeli na kole, které jim skutečně
+        sedí a funguje tak, jak má.
+      </p>
+      <p class="t-body">
+        Nejsme velký řetězec. Jsme místní obchod v Přerově, kde každého zákazníka
+        známe jménem a každé kolo dostane individuální péči. Ať přijdeš s problémem
+        nebo snem o novém sestavení — jsme tu.
+      </p>
+      <p class="t-body">
+        Věříme, že <strong>dobré kolo změní způsob, jak vnímáš svět kolem sebe.</strong>
+        A rádi ti pomůžeme to zažít.
+      </p>
     </div>
-    <div class="onas-cta reveal">
-      <a href="kola.html" class="cta-link cta-gold">Prohlédnout kola</a>
-      <a href="kontakt.html" class="cta-link cta-outline">Kde nás najdeš</a>
+    <div class="onas__cta reveal">
+      <a href="kola.html" class="btn btn--gold">Prohlédnout kola</a>
+      <a href="#kontakt" class="btn btn--outline">Kontakt</a>
     </div>
   </div>
 </section>
 
+<div class="gold-bar"></div>
+
+<!-- KONTAKT -->
+<section class="kontakt" id="kontakt">
+  <div class="kontakt__info">
+    <div class="t-eyebrow" style="color:var(--gold)">Kontakt</div>
+    <h2 class="t-title t-title--light reveal">Kde nás<br><span class="accent">najdeš</span></h2>
+
+    <div class="k-block reveal">
+      <div class="k-label">Adresa</div>
+      <div class="k-value">Škodova 1<br>750 00 Přerov</div>
+    </div>
+
+    <div class="k-block reveal">
+      <div class="k-label">Telefon</div>
+      <div class="k-value"><a href="tel:+420123456789">+420 123 456 789</a></div>
+      <div class="k-sub">Volejte v otevírací době</div>
+    </div>
+
+    <div class="k-block reveal">
+      <div class="k-label">E-mail</div>
+      <div class="k-value"><a href="mailto:info@mkbikeshop.cz">info@mkbikeshop.cz</a></div>
+    </div>
+
+    <div class="k-block reveal">
+      <div class="k-label">Otevírací doba</div>
+      <div class="k-hours">
+        <div class="k-hour-row">
+          <span class="k-hour-day">Pondělí – Pátek</span>
+          <span class="k-hour-time">9:00 – 17:00</span>
+        </div>
+        <div class="k-hour-row">
+          <span class="k-hour-day">Sobota</span>
+          <span class="k-hour-time">9:00 – 12:00</span>
+        </div>
+        <div class="k-hour-row">
+          <span class="k-hour-day">Neděle</span>
+          <span class="k-hour-time k-hour-time--closed">Zavřeno</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kontakt__map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2596.3!2d17.4502!3d49.4553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47124a96e37b84f1%3A0x4dc5fd89f0e25b0e!2zxaMka29kb3ZhIDEsIFDFmWVyb3Y!5e0!3m2!1scs!2scz!4v1"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="MK Bike Shop mapa">
+    </iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
-  <span class="footer-brand">© 2025 <span>MK Bike Shop</span> · Přerov</span>
-  <div class="footer-links">
-    <a href="kola.html" class="footer-link">Kola</a>
-    <a href="servis.html" class="footer-link">Servis & díly</a>
-    <a href="index.html#onas" class="footer-link">O nás</a>
-    <a href="kontakt.html" class="footer-link">Kontakt</a>
+  <div class="footer__inner">
+    <div>
+      <div class="footer__logo">
+        <img src="MK_bike_shop_bez_pozadi.png" alt="MK Bike Shop">
+        <span class="footer__logo-name">MK Bike Shop</span>
+      </div>
+      <p class="footer__tagline">
+        Specializovaný obchod a servis jízdních kol v Přerově.
+        Přes 20 let s vámi na každé cestě.
+      </p>
+    </div>
+    <div>
+      <div class="footer__col-title">Navigace</div>
+      <div class="footer__links">
+        <a href="kola.html" class="footer__link">Kola & doplňky</a>
+        <a href="servis.html" class="footer__link">Servis & opravy</a>
+        <a href="servis.html#dily" class="footer__link">Náhradní díly</a>
+        <a href="servis.html#prestavby" class="footer__link">Přestavby</a>
+        <a href="#onas" class="footer__link">O nás</a>
+        <a href="#kontakt" class="footer__link">Kontakt</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__col-title">Kontakt</div>
+      <div class="footer__contact-item">
+        <svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4.57 1 3 2.57 3 4.5c0 2.72 3.5 6.5 3.5 6.5S10 7.22 10 4.5C10 2.57 8.43 1 6.5 1z" fill="#F5B800"/></svg>
+        <span>Škodova 1, 750 00 Přerov</span>
+      </div>
+      <div class="footer__contact-item">
+        <svg viewBox="0 0 13 13" fill="none"><path d="M2 2h3l1.5 3-2 1.5a7.5 7.5 0 003 3L9 7.5l3 1.5v3s-2 1-3.5 1C4 13 0 9 0 5c0-1.5 1-3 1-3H2z" stroke="#F5B800" stroke-width="1" stroke-linejoin="round"/></svg>
+        <a href="tel:+420123456789">+420 123 456 789</a>
+      </div>
+      <div class="footer__contact-item">
+        <svg viewBox="0 0 13 13" fill="none"><path d="M2 3h9a1 1 0 011 1v5a1 1 0 01-1 1H2a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#F5B800" stroke-width="1"/><path d="M1.5 3.5l5 3.5 5-3.5" stroke="#F5B800" stroke-width="1"/></svg>
+        <a href="mailto:info@mkbikeshop.cz">info@mkbikeshop.cz</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__col-title">Otevírací doba</div>
+      <div class="footer__hour-row">
+        <span class="footer__hour-day">Po – Pá</span>
+        <span class="footer__hour-time">9:00 – 17:00</span>
+      </div>
+      <div class="footer__hour-row">
+        <span class="footer__hour-day">Sobota</span>
+        <span class="footer__hour-time">9:00 – 12:00</span>
+      </div>
+      <div class="footer__hour-row">
+        <span class="footer__hour-day">Neděle</span>
+        <span class="footer__hour-time" style="color:#2e2e2e">Zavřeno</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__copy">© 2025 <span>MK Bike Shop</span> · Přerov · Všechna práva vyhrazena</span>
+    <div class="footer__bottom-links">
+      <a href="kola.html" class="footer__bottom-link">Kola</a>
+      <a href="servis.html" class="footer__bottom-link">Servis</a>
+      <a href="#kontakt" class="footer__bottom-link">Kontakt</a>
+    </div>
   </div>
 </footer>
 
@@ -463,7 +327,7 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(e.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>

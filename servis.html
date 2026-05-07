@@ -3,245 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Servis jízdních kol, náhradní díly a přestavby – MK Bike Shop Přerov. Opravíme cokoliv. Přijďte k nám.">
+<meta name="description" content="Servis jízdních kol, přestavby a náhradní díly – MK Bike Shop Přerov. Opravíme cokoliv. Přijďte k nám.">
 <title>Servis & díly – MK Bike Shop Přerov</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --gold: #F5B800; --gold-dark: #C99600;
-  --black: #0a0a0a; --white: #ffffff;
-  --gray-bg: #F7F6F3; --border: #E8E5E0;
-  --text-muted: #888; --text-body: #555;
-  --fd: 'Barlow Condensed', sans-serif;
-  --fb: 'Barlow', sans-serif;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--fb); background: var(--white); color: var(--black); overflow-x: hidden; }
-a { text-decoration: none; color: inherit; }
-img { display: block; max-width: 100%; }
-
-.topbar { background: var(--gold); padding: .4rem 2.5rem; display: flex; align-items: center; justify-content: flex-end; gap: 2rem; }
-.tb-item { display: flex; align-items: center; gap: 6px; font-family: var(--fb); font-size: 11px; font-weight: 600; color: var(--black); letter-spacing: .03em; }
-.tb-item svg { width: 13px; height: 13px; flex-shrink: 0; }
-.nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 58px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; transition: box-shadow .3s; }
-.nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.07); }
-.logo-wrap { display: flex; align-items: center; gap: 10px; }
-.logo-wrap img { width: 36px; height: 36px; border-radius: 50%; background: var(--black); padding: 3px; object-fit: contain; }
-.logo-name { font-family: var(--fd); font-size: 17px; font-weight: 800; color: var(--black); letter-spacing: .08em; text-transform: uppercase; }
-.nav-links { display: flex; align-items: center; gap: 2rem; }
-.nav-link { font-family: var(--fb); font-size: 11px; font-weight: 600; color: var(--text-muted); letter-spacing: .08em; text-transform: uppercase; transition: color .2s; }
-.nav-link:hover, .nav-link.active { color: var(--black); }
-.nav-cta { font-family: var(--fb); font-size: 11px; font-weight: 700; color: var(--black); background: var(--gold); padding: 8px 20px; border-radius: 4px; letter-spacing: .06em; text-transform: uppercase; transition: background .2s; }
-.nav-cta:hover { background: var(--gold-dark); }
-.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; }
-.nav-mobile { display: none; background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; flex-direction: column; gap: .5rem; }
-.nav-mobile.open { display: flex; }
-.nav-mobile .nav-link { font-size: 13px; padding: .5rem 0; border-bottom: 1px solid var(--border); }
-.nav-mobile .nav-cta { display: inline-block; margin-top: .5rem; text-align: center; }
-
-.gold-bar { height: 3px; background: var(--gold); }
-
-.page-hero { background: var(--black); padding: 4rem 2.5rem 3rem; }
-.eyebrow { font-family: var(--fd); font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #444; display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
-.eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--gold); flex-shrink: 0; }
-.page-title { font-family: var(--fd); font-size: clamp(42px, 6vw, 70px); font-weight: 900; text-transform: uppercase; line-height: .95; letter-spacing: -.01em; color: var(--white); }
-.page-title .accent { color: var(--gold); }
-.page-sub { font-family: var(--fb); font-size: 14px; color: #666; line-height: 1.65; margin-top: 1.25rem; max-width: 540px; }
-
-.section-eyebrow { font-family: var(--fd); font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; margin-bottom: .75rem; }
-.section-eyebrow::before { content: ''; display: block; width: 18px; height: 2px; background: var(--gold); flex-shrink: 0; }
-.section-title { font-family: var(--fd); font-size: clamp(28px, 3.5vw, 42px); font-weight: 900; text-transform: uppercase; letter-spacing: -.01em; line-height: 1; margin-bottom: 2rem; }
-.section-title .accent { color: var(--gold); }
-.section-title-light { color: var(--white); }
-
-/* SERVIS SPLIT */
-.servis-split { display: grid; grid-template-columns: 1.1fr 1fr; }
-.servis-left { padding: 4rem 2.5rem; border-right: 1px solid var(--border); }
-.servis-right { background: var(--black); padding: 4rem 2.5rem; }
-
-.servis-list { display: flex; flex-direction: column; }
-.servis-item { display: flex; align-items: flex-start; gap: 1.1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
-.servis-item:first-child { border-top: 1px solid var(--border); }
-.servis-dash { width: 20px; height: 2px; background: var(--gold); flex-shrink: 0; margin-top: 9px; }
-.servis-name { font-family: var(--fd); font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--black); margin-bottom: 3px; }
-.servis-desc { font-family: var(--fb); font-size: 12.5px; color: var(--text-muted); line-height: 1.55; }
-
-.info-box { display: flex; flex-direction: column; gap: 2rem; height: 100%; }
-.info-box-title { font-family: var(--fd); font-size: 28px; font-weight: 900; text-transform: uppercase; color: var(--white); line-height: 1.05; }
-.info-box-title span { color: var(--gold); }
-.hours { display: flex; flex-direction: column; gap: .65rem; }
-.h-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; padding-bottom: .65rem; border-bottom: 1px solid #1e1e1e; }
-.h-row:last-child { border-bottom: none; padding-bottom: 0; }
-.h-day { font-family: var(--fb); color: #666; }
-.h-time { font-family: var(--fd); font-size: 15px; font-weight: 700; color: var(--white); letter-spacing: .04em; }
-.h-time.closed { color: #444; }
-.addr-block { display: flex; align-items: flex-start; gap: 10px; padding-top: 1.5rem; border-top: 1px solid #1e1e1e; }
-.addr-block svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; }
-.addr-block-text { font-family: var(--fb); font-size: 13px; color: #777; line-height: 1.6; }
-.addr-block-text strong { display: block; font-family: var(--fd); font-size: 14px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; }
-
-/* DILY */
-.dily-section { padding: 4rem 2.5rem; background: var(--gray-bg); }
-.dily-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-.dily-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem 1.6rem; transition: border-color .2s, background .2s; }
-.dily-card:hover { border-color: var(--gold); background: #FDFCF8; }
-.dily-label { font-family: var(--fd); font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: .14em; text-transform: uppercase; margin-bottom: .65rem; }
-.dily-cat { font-family: var(--fd); font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--black); margin-bottom: .4rem; }
-.dily-items { font-family: var(--fb); font-size: 12.5px; color: var(--text-muted); line-height: 1.65; }
-
-/* PRESTAVBY */
-.prestavby-section { background: var(--black); padding: 4rem 2.5rem; }
-.prestavby-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-.steps { display: flex; flex-direction: column; gap: 0; margin-top: 1.5rem; }
-.step { display: flex; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid #1e1e1e; align-items: flex-start; }
-.step:first-child { padding-top: 0; }
-.step:last-child { border-bottom: none; }
-.step-dash { font-family: var(--fd); font-size: 28px; font-weight: 900; color: #222; line-height: 1; flex-shrink: 0; width: 32px; }
-.step-title { font-family: var(--fd); font-size: 15px; font-weight: 800; color: var(--white); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
-.step-desc { font-family: var(--fb); font-size: 12.5px; color: #666; line-height: 1.55; }
-
-.showcase { display: flex; flex-direction: column; gap: 1px; background: #1e1e1e; border-radius: 10px; overflow: hidden; border: 1px solid #1e1e1e; }
-.showcase-item { background: #141414; padding: 1.35rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background .2s; }
-.showcase-item:hover { background: #1a1a1a; }
-.showcase-label { font-family: var(--fd); font-size: 15px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: .04em; }
-.showcase-sub { font-family: var(--fb); font-size: 11.5px; color: #555; margin-top: 3px; }
-.showcase-tag { font-family: var(--fb); font-size: 10px; font-weight: 700; color: #7A5C00; background: rgba(245,184,0,.15); padding: 4px 10px; border-radius: 3px; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
-
-.cta-banner { background: var(--gold); padding: 3rem 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-.cta-banner-title { font-family: var(--fd); font-size: 26px; font-weight: 900; text-transform: uppercase; color: var(--black); line-height: 1.05; }
-.cta-banner-sub { font-family: var(--fb); font-size: 13px; color: rgba(0,0,0,.55); margin-top: .5rem; }
-.btn { display: inline-block; font-family: var(--fd); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 13px 28px; border-radius: 4px; transition: opacity .2s, transform .15s; }
-.btn:hover { opacity: .88; transform: translateY(-1px); }
-.btn-dark { background: var(--black); color: var(--gold); }
-
-.footer { background: var(--black); border-top: 1px solid #1a1a1a; padding: 1.25rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
-.footer-brand { font-family: var(--fd); font-size: 11px; font-weight: 700; color: #333; letter-spacing: .1em; text-transform: uppercase; }
-.footer-brand span { color: var(--gold); }
-.footer-links { display: flex; gap: 2rem; }
-.footer-link { font-family: var(--fb); font-size: 10px; color: #333; letter-spacing: .08em; text-transform: uppercase; transition: color .2s; }
-.footer-link:hover { color: var(--gold); }
-
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 960px) {
-  .topbar { justify-content: center; gap: 1rem; }
-  .nav { padding: 0 1.5rem; }
-  .nav-links { display: none; }
-  .nav-toggle { display: flex; }
-  .page-hero { padding: 3rem 1.75rem 2.5rem; }
-  .servis-split { grid-template-columns: 1fr; }
-  .servis-left { border-right: none; border-bottom: 1px solid var(--border); padding: 3rem 1.75rem; }
-  .servis-right { padding: 3rem 1.75rem; }
-  .dily-section { padding: 3rem 1.75rem; }
-  .dily-grid { grid-template-columns: 1fr 1fr; }
-  .prestavby-section { padding: 3rem 1.75rem; }
-  .prestavby-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .cta-banner { flex-direction: column; align-items: flex-start; padding: 2.5rem 1.75rem; }
-  .footer { flex-direction: column; gap: 1rem; text-align: center; }
-  .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
-}
-@media (max-width: 560px) {
-  .topbar { flex-direction: column; gap: .35rem; padding: .5rem 1rem; }
-  .nav { padding: 0 1rem; }
-  .dily-grid { grid-template-columns: 1fr; }
-  .page-hero, .servis-left, .servis-right, .dily-section, .prestavby-section { padding-left: 1.25rem; padding-right: 1.25rem; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="topbar">
-  <div class="tb-item">
+  <div class="topbar__item">
     <svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4.57 1 3 2.57 3 4.5c0 2.72 3.5 6.5 3.5 6.5S10 7.22 10 4.5C10 2.57 8.43 1 6.5 1zm0 4.75a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z" fill="#0a0a0a"/></svg>
     Škodova 1, Přerov
   </div>
-  <div class="tb-item">
-    <svg viewBox="0 0 13 13" fill="none"><path d="M2 3h9a1 1 0 011 1v5a1 1 0 01-1 1H2a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#0a0a0a" stroke-width="1"/><path d="M1.5 3.5l5 3.5 5-3.5" stroke="#0a0a0a" stroke-width="1"/></svg>
+  <div class="topbar__item">
+    <svg viewBox="0 0 13 13" fill="none"><path d="M2 2h3l1.5 3-2 1.5a7.5 7.5 0 003 3L9 7.5l3 1.5v3s-2 1-3.5 1C4 13 0 9 0 5c0-1.5 1-3 1-3H2z" stroke="#0a0a0a" stroke-width="1" stroke-linejoin="round"/></svg>
     +420 123 456 789
   </div>
 </div>
 
 <nav class="nav" id="mainNav">
-  <a href="index.html" class="logo-wrap">
+  <a href="index.html" class="nav__logo">
     <img src="MK_bike_shop_bez_pozadi.png" alt="MK Bike Shop logo">
-    <span class="logo-name">MK Bike Shop</span>
+    <span class="nav__logo-name">MK Bike Shop</span>
   </a>
-  <div class="nav-links">
-    <a href="kola.html" class="nav-link">Kola</a>
-    <a href="servis.html" class="nav-link active">Servis & díly</a>
-    <a href="index.html#onas" class="nav-link">O nás</a>
-    <a href="kontakt.html" class="nav-cta">Kde nás najdeš</a>
+  <div class="nav__links">
+    <a href="kola.html" class="nav__link">Kola & doplňky</a>
+    <a href="servis.html" class="nav__link active">Servis & díly</a>
+    <a href="index.html#onas" class="nav__link">O nás</a>
+    <a href="index.html#kontakt" class="nav__cta">Kontakt</a>
   </div>
-  <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  <div class="nav__toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="kola.html" class="nav-link" onclick="toggleNav()">Kola</a>
-  <a href="servis.html" class="nav-link active" onclick="toggleNav()">Servis & díly</a>
-  <a href="index.html#onas" class="nav-link" onclick="toggleNav()">O nás</a>
-  <a href="kontakt.html" class="nav-cta" onclick="toggleNav()">Kde nás najdeš</a>
+  <a href="kola.html" class="nav__link" onclick="toggleNav()">Kola & doplňky</a>
+  <a href="servis.html" class="nav__link active" onclick="toggleNav()">Servis & díly</a>
+  <a href="index.html#onas" class="nav__link" onclick="toggleNav()">O nás</a>
+  <a href="index.html#kontakt" class="nav__cta" onclick="toggleNav()">Kontakt</a>
 </div>
 
 <div class="gold-bar"></div>
 
 <div class="page-hero">
-  <div class="eyebrow">Servis & díly</div>
-  <h1 class="page-title">Opravíme<br><span class="accent">cokoliv.</span></h1>
-  <p class="page-sub">Přijďte s jakýmkoliv kolem — máme zkušenosti se vším. Od základní opravy po kompletní přestavbu.</p>
+  <div class="page-hero__eyebrow">Servis & díly</div>
+  <h1 class="page-hero__title">Opravíme<br><span class="accent">cokoliv.</span></h1>
+  <p class="page-hero__sub">
+    Přijďte s jakýmkoliv kolem — máme zkušenosti se vším.
+    Od základní opravy po kompletní přestavbu na míru.
+  </p>
 </div>
 
+<!-- SERVIS -->
 <div class="servis-split">
   <div class="servis-left">
-    <div class="section-eyebrow reveal">Servis</div>
-    <h2 class="section-title reveal">Co <span class="accent">opravíme</span></h2>
+    <div class="t-eyebrow reveal">Servis</div>
+    <h2 class="t-title reveal">Co <span class="accent">opravíme</span></h2>
     <div class="servis-list reveal">
       <div class="servis-item">
-        <div class="servis-dash"></div>
-        <div><div class="servis-name">Základní servis</div><div class="servis-desc">Namazání, seřízení řazení a brzd, kontrola opotřebení celého kola.</div></div>
+        <div class="servis-item__dash"></div>
+        <div>
+          <div class="servis-item__name">Základní servis</div>
+          <div class="servis-item__desc">Namazání, seřízení řazení a brzd, kontrola opotřebení celého kola.</div>
+        </div>
       </div>
       <div class="servis-item">
-        <div class="servis-dash"></div>
-        <div><div class="servis-name">Oprava defektu</div><div class="servis-desc">Výměna duše nebo oprava bezdušové pláště na počkání.</div></div>
+        <div class="servis-item__dash"></div>
+        <div>
+          <div class="servis-item__name">Oprava defektu</div>
+          <div class="servis-item__desc">Výměna duše nebo oprava bezdušové pláště na počkání.</div>
+        </div>
       </div>
       <div class="servis-item">
-        <div class="servis-dash"></div>
-        <div><div class="servis-name">Brzdový systém</div><div class="servis-desc">Odvzdušnění hydrauliky, výměna brzdových destiček, seřízení kabelů.</div></div>
+        <div class="servis-item__dash"></div>
+        <div>
+          <div class="servis-item__name">Brzdový systém</div>
+          <div class="servis-item__desc">Odvzdušnění hydrauliky, výměna brzdových destiček, seřízení kabelů.</div>
+        </div>
       </div>
       <div class="servis-item">
-        <div class="servis-dash"></div>
-        <div><div class="servis-name">Seřízení převodů</div><div class="servis-desc">Přesné seřízení přehazovačky, přesmykače a řadících páček.</div></div>
+        <div class="servis-item__dash"></div>
+        <div>
+          <div class="servis-item__name">Seřízení převodů</div>
+          <div class="servis-item__desc">Přesné seřízení přehazovačky, přesmykače a řadících páček.</div>
+        </div>
       </div>
       <div class="servis-item">
-        <div class="servis-dash"></div>
-        <div><div class="servis-name">Sezonní prohlídka</div><div class="servis-desc">Kompletní kontrola celého kola před sezónou i po ní.</div></div>
+        <div class="servis-item__dash"></div>
+        <div>
+          <div class="servis-item__name">Servis vidlice & tlumiče</div>
+          <div class="servis-item__desc">Výměna těsnění a olejů, nastavení odpružení dle jezdce.</div>
+        </div>
       </div>
       <div class="servis-item">
-        <div class="servis-dash"></div>
-        <div><div class="servis-name">Servis vidlice & tlumiče</div><div class="servis-desc">Výměna těsnění a olejů, nastavení odpružení.</div></div>
+        <div class="servis-item__dash"></div>
+        <div>
+          <div class="servis-item__name">Sezonní prohlídka</div>
+          <div class="servis-item__desc">Kompletní kontrola celého kola před sezónou i po ní.</div>
+        </div>
       </div>
       <div class="servis-item">
-        <div class="servis-dash"></div>
-        <div><div class="servis-name">Generální oprava</div><div class="servis-desc">Kompletní demontáž, čištění, výměna opotřebených dílů a nové sestavení.</div></div>
+        <div class="servis-item__dash"></div>
+        <div>
+          <div class="servis-item__name">Generální oprava</div>
+          <div class="servis-item__desc">Kompletní demontáž, čištění, výměna opotřebených dílů a nové sestavení.</div>
+        </div>
       </div>
     </div>
   </div>
+
   <div class="servis-right">
     <div class="info-box reveal">
       <div>
-        <div class="info-box-title">Přijďte<br><span>kdykoliv.</span></div>
-        <p style="font-family:var(--fb);font-size:13px;color:#555;margin-top:.75rem;line-height:1.6">Neobjednáváme. Prostě přijeďte — postaráme se o vaše kolo.</p>
+        <div class="info-box__title">Přijďte<br><span>kdykoliv.</span></div>
+        <p class="info-box__note">
+          Neobjednáváme předem — prostě přijeďte. Postaráme se
+          o vaše kolo tak rychle, jak to půjde.
+        </p>
       </div>
-      <div class="hours">
-        <div class="h-row"><span class="h-day">Pondělí – Pátek</span><span class="h-time">9:00 – 17:00</span></div>
-        <div class="h-row"><span class="h-day">Sobota</span><span class="h-time">9:00 – 12:00</span></div>
-        <div class="h-row"><span class="h-day">Neděle</span><span class="h-time closed">Zavřeno</span></div>
+      <div class="info-hours">
+        <div class="info-hour-row">
+          <span class="info-hour-day">Pondělí – Pátek</span>
+          <span class="info-hour-time">9:00 – 17:00</span>
+        </div>
+        <div class="info-hour-row">
+          <span class="info-hour-day">Sobota</span>
+          <span class="info-hour-time">9:00 – 12:00</span>
+        </div>
+        <div class="info-hour-row">
+          <span class="info-hour-day">Neděle</span>
+          <span class="info-hour-time info-hour-time--closed">Zavřeno</span>
+        </div>
       </div>
-      <div class="addr-block">
+      <div class="info-addr">
         <svg viewBox="0 0 16 16" fill="none"><path d="M8 1C5.79 1 4 2.79 4 5c0 3.25 4 9 4 9s4-5.75 4-9c0-2.21-1.79-4-4-4zm0 5.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#F5B800"/></svg>
-        <div class="addr-block-text">
+        <div class="info-addr-text">
           <strong>MK Bike Shop</strong>
           Škodova 1, 750 00 Přerov
         </div>
@@ -250,111 +145,193 @@ img { display: block; max-width: 100%; }
   </div>
 </div>
 
-<section class="dily-section" id="dily">
-  <div class="section-eyebrow reveal">Náhradní díly</div>
-  <h2 class="section-title reveal">Vše pro <span class="accent">vaše kolo</span></h2>
+<!-- DILY -->
+<section class="section section--alt" id="dily">
+  <div class="t-eyebrow reveal">Náhradní díly</div>
+  <h2 class="t-title reveal">Máme co <span class="accent">potřebuješ</span></h2>
+  <p class="t-body reveal" style="max-width:620px; margin-bottom:2.5rem">
+    Držíme skladem široký sortiment náhradních dílů a příslušenství pro všechny
+    typy kol. Pokud zrovna nemáme přesně to, co hledáš — seženeme to.
+    Stačí se zeptat.
+  </p>
   <div class="dily-grid reveal">
     <div class="dily-card">
-      <div class="dily-label">Pohon</div>
-      <div class="dily-cat">Pohonná soustava</div>
-      <div class="dily-items">Řetězy, kazety, převodníky, kličky, pedály, středy, pouzdra</div>
+      <div class="dily-card__label">Pohon</div>
+      <div class="dily-card__cat">Pohonná soustava</div>
+      <div class="dily-card__items">Řetězy, kazety, převodníky, kličky, pedály, středy, pouzdra a další</div>
     </div>
     <div class="dily-card">
-      <div class="dily-label">Brzdění</div>
-      <div class="dily-cat">Brzdy & hydraulika</div>
-      <div class="dily-items">Brzdové destičky, kotouče, páčky, hadičky, hydraulická kapalina</div>
+      <div class="dily-card__label">Brzdění</div>
+      <div class="dily-card__cat">Brzdy & hydraulika</div>
+      <div class="dily-card__items">Brzdové destičky, kotouče, páčky, hadičky, hydraulická kapalina</div>
     </div>
     <div class="dily-card">
-      <div class="dily-label">Kola</div>
-      <div class="dily-cat">Ráfky & pláště</div>
-      <div class="dily-items">Pláště, duše, ráfky, niple, dráty, bezdušová sada, těsnění</div>
+      <div class="dily-card__label">Kola</div>
+      <div class="dily-card__cat">Ráfky & pláště</div>
+      <div class="dily-card__items">Pláště, duše, ráfky, niple, dráty, bezdušová sada, těsnění</div>
     </div>
     <div class="dily-card">
-      <div class="dily-label">Řízení</div>
-      <div class="dily-cat">Řidítka & sedlo</div>
-      <div class="dily-items">Řidítka, představce, sedla, sedlovky, konce řidítek, gripy</div>
+      <div class="dily-card__label">Řízení</div>
+      <div class="dily-card__cat">Řidítka & sedlo</div>
+      <div class="dily-card__items">Řidítka, představce, sedla, sedlovky, konce řidítek, gripy</div>
     </div>
     <div class="dily-card">
-      <div class="dily-label">Odpružení</div>
-      <div class="dily-cat">Vidlice & tlumič</div>
-      <div class="dily-items">Servisní sady, těsnění, oleje, vzduchové komory, pružiny</div>
+      <div class="dily-card__label">Odpružení</div>
+      <div class="dily-card__cat">Vidlice & tlumič</div>
+      <div class="dily-card__items">Servisní sady, těsnění, oleje, vzduchové komory, pružiny</div>
     </div>
     <div class="dily-card">
-      <div class="dily-label">Doplňky</div>
-      <div class="dily-cat">Příslušenství</div>
-      <div class="dily-items">Světla, zámky, blatníky, nosiče, cyklopočítače, helmy, batohy</div>
+      <div class="dily-card__label">Doplňky</div>
+      <div class="dily-card__cat">Příslušenství</div>
+      <div class="dily-card__items">Světla, zámky, blatníky, nosiče, cyklopočítače, helmy, batohy</div>
     </div>
   </div>
 </section>
 
-<section class="prestavby-section" id="prestavby">
+<!-- PRESTAVBY -->
+<section class="section section--dark" id="prestavby">
   <div class="prestavby-grid">
     <div>
-      <div class="section-eyebrow reveal">Přestavby & Custom</div>
-      <h2 class="section-title section-title-light reveal">Tvoje kolo,<br><span class="accent">tvoje pravidla.</span></h2>
-      <p style="font-family:var(--fb);font-size:14px;color:#666;line-height:1.65;margin-bottom:0" class="reveal">Přestavíme kolo přesně podle tvých představ — od výběru komponentů po finální seřízení. Každý projekt je jedinečný.</p>
-      <div class="steps reveal">
-        <div class="step">
-          <div class="step-dash">—</div>
-          <div><div class="step-title">Konzultace</div><div class="step-desc">Přijď, popiš co chceš. Probereme možnosti, materiály a rozpočet bez závazků.</div></div>
+      <div class="t-eyebrow reveal">Přestavby & Custom</div>
+      <h2 class="t-title t-title--light reveal">
+        Tvoje kolo,<br><span class="accent">tvoje pravidla.</span>
+      </h2>
+      <p class="t-body t-body--light reveal">
+        Přestavíme kolo přesně podle tvých představ — od výběru komponentů
+        po finální seřízení. Každý projekt je jedinečný a přistupujeme k němu
+        s plnou péčí.
+      </p>
+      <div class="prestavby-steps reveal">
+        <div class="prestavby-step">
+          <div class="prestavby-step__dash">—</div>
+          <div>
+            <div class="prestavby-step__title">Konzultace</div>
+            <div class="prestavby-step__desc">Přijď, popiš co chceš. Probereme možnosti, materiály a rozpočet — bez závazků.</div>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-dash">—</div>
-          <div><div class="step-title">Návrh & díly</div><div class="step-desc">Sestavíme seznam komponentů a objednáme vše potřebné.</div></div>
+        <div class="prestavby-step">
+          <div class="prestavby-step__dash">—</div>
+          <div>
+            <div class="prestavby-step__title">Návrh & díly</div>
+            <div class="prestavby-step__desc">Sestavíme seznam komponentů a objednáme vše potřebné za nejlepší cenu.</div>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-dash">—</div>
-          <div><div class="step-title">Stavba</div><div class="step-desc">Kolo postavíme s péčí a přesností. Každý šroub utažen na správný moment.</div></div>
+        <div class="prestavby-step">
+          <div class="prestavby-step__dash">—</div>
+          <div>
+            <div class="prestavby-step__title">Stavba</div>
+            <div class="prestavby-step__desc">Kolo postavíme s péčí a přesností. Každý šroub utažen na správný moment.</div>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-dash">—</div>
-          <div><div class="step-title">Předání</div><div class="step-desc">Vyzkoušíš, my doladíme. Odjedeš spokojený.</div></div>
+        <div class="prestavby-step">
+          <div class="prestavby-step__dash">—</div>
+          <div>
+            <div class="prestavby-step__title">Předání</div>
+            <div class="prestavby-step__desc">Vyzkoušíš, my doladíme. Odjedeš spokojený.</div>
+          </div>
         </div>
       </div>
     </div>
     <div class="reveal">
-      <div class="section-eyebrow" style="margin-bottom:1rem">Ukázky realizací</div>
+      <div class="t-eyebrow" style="margin-bottom:1.25rem">Ukázky realizací</div>
       <div class="showcase">
-        <div class="showcase-item">
-          <div><div class="showcase-label">Gravel build</div><div class="showcase-sub">Titanový rám · SRAM Rival AXS · Hunt kola</div></div>
-          <span class="showcase-tag">Realizováno</span>
+        <div class="showcase__item">
+          <div>
+            <div class="showcase__label">Gravel build</div>
+            <div class="showcase__sub">Titanový rám · SRAM Rival AXS · Hunt kola</div>
+          </div>
+          <span class="showcase__tag">Realizováno</span>
         </div>
-        <div class="showcase-item">
-          <div><div class="showcase-label">Enduro MTB</div><div class="showcase-sub">Carbon rám · Shimano XT · Fox odpružení</div></div>
-          <span class="showcase-tag">Realizováno</span>
+        <div class="showcase__item">
+          <div>
+            <div class="showcase__label">Enduro MTB</div>
+            <div class="showcase__sub">Carbon rám · Shimano XT · Fox odpružení</div>
+          </div>
+          <span class="showcase__tag">Realizováno</span>
         </div>
-        <div class="showcase-item">
-          <div><div class="showcase-label">Urban single speed</div><div class="showcase-sub">Chromoly rám · Brooks sedlo · custom barvy</div></div>
-          <span class="showcase-tag">Realizováno</span>
+        <div class="showcase__item">
+          <div>
+            <div class="showcase__label">Urban single speed</div>
+            <div class="showcase__sub">Chromoly rám · Brooks sedlo · custom lak</div>
+          </div>
+          <span class="showcase__tag">Realizováno</span>
         </div>
-        <div class="showcase-item">
-          <div><div class="showcase-label">E-bike konverze</div><div class="showcase-sub">Bafang motor · vlastní baterie · integrace</div></div>
-          <span class="showcase-tag">Realizováno</span>
+        <div class="showcase__item">
+          <div>
+            <div class="showcase__label">E-bike konverze</div>
+            <div class="showcase__sub">Bafang motor · vlastní baterie · integrace</div>
+          </div>
+          <span class="showcase__tag">Realizováno</span>
         </div>
-        <div class="showcase-item">
-          <div><div class="showcase-label">Road racer</div><div class="showcase-sub">Carbon rám · Campagnolo · Zipp kola</div></div>
-          <span class="showcase-tag">Realizováno</span>
+        <div class="showcase__item">
+          <div>
+            <div class="showcase__label">Road racer</div>
+            <div class="showcase__sub">Carbon rám · Campagnolo · Zipp kola</div>
+          </div>
+          <span class="showcase__tag">Realizováno</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="cta-banner">
+<div class="cta-banner cta-banner--gold reveal">
   <div>
-    <div class="cta-banner-title">Přijďte k nám.<br>Vyřešíme vše osobně.</div>
-    <div class="cta-banner-sub">Škodova 1, Přerov · Po–Pá 9–17 · So 9–12</div>
+    <div class="cta-banner__title">Přijďte k nám.<br>Vyřešíme vše osobně.</div>
+    <div class="cta-banner__sub">Škodova 1, Přerov &nbsp;·&nbsp; Po–Pá 9–17 &nbsp;·&nbsp; So 9–12</div>
   </div>
-  <a href="kontakt.html" class="btn btn-dark">Kde nás najdeš</a>
+  <a href="index.html#kontakt" class="btn btn--dark">Kde nás najdeš</a>
 </div>
 
 <footer class="footer">
-  <span class="footer-brand">© 2025 <span>MK Bike Shop</span> · Přerov</span>
-  <div class="footer-links">
-    <a href="kola.html" class="footer-link">Kola</a>
-    <a href="servis.html" class="footer-link">Servis & díly</a>
-    <a href="index.html#onas" class="footer-link">O nás</a>
-    <a href="kontakt.html" class="footer-link">Kontakt</a>
+  <div class="footer__inner">
+    <div>
+      <div class="footer__logo">
+        <img src="MK_bike_shop_bez_pozadi.png" alt="MK Bike Shop">
+        <span class="footer__logo-name">MK Bike Shop</span>
+      </div>
+      <p class="footer__tagline">Specializovaný obchod a servis jízdních kol v Přerově. Přes 20 let s vámi na každé cestě.</p>
+    </div>
+    <div>
+      <div class="footer__col-title">Navigace</div>
+      <div class="footer__links">
+        <a href="kola.html" class="footer__link">Kola & doplňky</a>
+        <a href="servis.html" class="footer__link">Servis & opravy</a>
+        <a href="servis.html#dily" class="footer__link">Náhradní díly</a>
+        <a href="servis.html#prestavby" class="footer__link">Přestavby</a>
+        <a href="index.html#onas" class="footer__link">O nás</a>
+        <a href="index.html#kontakt" class="footer__link">Kontakt</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__col-title">Kontakt</div>
+      <div class="footer__contact-item">
+        <svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4.57 1 3 2.57 3 4.5c0 2.72 3.5 6.5 3.5 6.5S10 7.22 10 4.5C10 2.57 8.43 1 6.5 1z" fill="#F5B800"/></svg>
+        <span>Škodova 1, 750 00 Přerov</span>
+      </div>
+      <div class="footer__contact-item">
+        <svg viewBox="0 0 13 13" fill="none"><path d="M2 2h3l1.5 3-2 1.5a7.5 7.5 0 003 3L9 7.5l3 1.5v3s-2 1-3.5 1C4 13 0 9 0 5c0-1.5 1-3 1-3H2z" stroke="#F5B800" stroke-width="1" stroke-linejoin="round"/></svg>
+        <a href="tel:+420123456789">+420 123 456 789</a>
+      </div>
+      <div class="footer__contact-item">
+        <svg viewBox="0 0 13 13" fill="none"><path d="M2 3h9a1 1 0 011 1v5a1 1 0 01-1 1H2a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#F5B800" stroke-width="1"/><path d="M1.5 3.5l5 3.5 5-3.5" stroke="#F5B800" stroke-width="1"/></svg>
+        <a href="mailto:info@mkbikeshop.cz">info@mkbikeshop.cz</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__col-title">Otevírací doba</div>
+      <div class="footer__hour-row"><span class="footer__hour-day">Po – Pá</span><span class="footer__hour-time">9:00 – 17:00</span></div>
+      <div class="footer__hour-row"><span class="footer__hour-day">Sobota</span><span class="footer__hour-time">9:00 – 12:00</span></div>
+      <div class="footer__hour-row"><span class="footer__hour-day">Neděle</span><span class="footer__hour-time" style="color:#2e2e2e">Zavřeno</span></div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__copy">© 2025 <span>MK Bike Shop</span> · Přerov · Všechna práva vyhrazena</span>
+    <div class="footer__bottom-links">
+      <a href="kola.html" class="footer__bottom-link">Kola</a>
+      <a href="servis.html" class="footer__bottom-link">Servis</a>
+      <a href="index.html#kontakt" class="footer__bottom-link">Kontakt</a>
+    </div>
   </div>
 </footer>
 
