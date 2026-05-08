@@ -13,7 +13,7 @@
   --gray-light: #EFEDE9;
   --border:     #E8E5E0;
   --border-dark:#1E1E1E;
-  --muted:      #6a6a6a;
+  --muted:      #999999;
   --body:       #333;
 
   --fd: 'Barlow Condensed', sans-serif;
@@ -296,7 +296,7 @@ ul { list-style: none; }
   background: currentColor;
   flex-shrink: 0;
 }
-.hero__eyebrow--light { color: #aaa; }
+.hero__eyebrow--light { color: #999999; }
 .hero__eyebrow--dark  { color: rgba(0,0,0,.38); }
 
 .hero__headline {
@@ -320,7 +320,7 @@ ul { list-style: none; }
   margin-bottom: 2rem;
   max-width: 380px;
 }
-.hero__sub--light { color: #bbb; }
+.hero__sub--light { color: #999999; }
 .hero__sub--dark  { color: rgba(0,0,0,.52); }
 
 /* Address block in hero */
@@ -498,7 +498,7 @@ ul { list-style: none; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .16em;
-  color: #aaa;
+  color: #999999;
   margin-top: -.4rem;
 }
 
@@ -531,7 +531,7 @@ ul { list-style: none; }
 .onas__value-text {
   font-family: var(--fb);
   font-size: 14px;
-  color: #aaa;
+  color: #999999;
   line-height: 1.6;
 }
 
@@ -724,7 +724,7 @@ ul { list-style: none; }
 .footer__bottom-link {
   font-family: var(--fb);
   font-size: 11px;
-  color: #282828;
+  color: #999999;
   letter-spacing: .07em;
   text-transform: uppercase;
   transition: color .2s;
@@ -755,7 +755,7 @@ ul { list-style: none; }
   font-weight: 700;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: #3a3a3a;
+  color: #999999;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -782,8 +782,8 @@ ul { list-style: none; }
 .page-hero__title .accent { color: var(--gold); }
 .page-hero__sub {
   font-family: var(--fb);
-  font-size: 15px;
-  color: #666;
+  font-size: 16px;
+  color: #999999;
   line-height: 1.7;
   max-width: 560px;
 }
@@ -1015,8 +1015,8 @@ ul { list-style: none; }
 .info-box__title span { color: var(--gold); }
 .info-box__note {
   font-family: var(--fb);
-  font-size: 13.5px;
-  color: #555;
+  font-size: 15px;
+  color: #999999;
   line-height: 1.65;
   margin-top: .5rem;
 }
@@ -1026,12 +1026,12 @@ ul { list-style: none; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
+  font-size: 15px;
   padding-bottom: .75rem;
   border-bottom: 1px solid var(--border-dark);
 }
 .info-hour-row:last-child { border-bottom: none; padding-bottom: 0; }
-.info-hour-day { font-family: var(--fb); color: #666; }
+.info-hour-day { font-family: var(--fb); color: #999999; }
 .info-hour-time {
   font-family: var(--fd);
   font-size: 17px;
@@ -1039,7 +1039,7 @@ ul { list-style: none; }
   color: var(--white);
   letter-spacing: .04em;
 }
-.info-hour-time--closed { color: #444; }
+.info-hour-time--closed { color: #777; }
 
 .info-addr {
   display: flex;
@@ -1051,8 +1051,8 @@ ul { list-style: none; }
 .info-addr svg { width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px; }
 .info-addr-text {
   font-family: var(--fb);
-  font-size: 13.5px;
-  color: #777;
+  font-size: 15px;
+  color: #999999;
   line-height: 1.6;
 }
 .info-addr-text strong {
@@ -1127,7 +1127,7 @@ ul { list-style: none; }
   font-family: var(--fd);
   font-size: 32px;
   font-weight: 900;
-  color: #222;
+  color: #999999;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -1143,7 +1143,7 @@ ul { list-style: none; }
 .prestavby-step__desc {
   font-family: var(--fb);
   font-size: 13px;
-  color: #666;
+  color: #999999;
   line-height: 1.6;
 }
 
@@ -1177,7 +1177,7 @@ ul { list-style: none; }
 .showcase__sub {
   font-family: var(--fb);
   font-size: 12px;
-  color: #555;
+  color: #999999;
   margin-top: 3px;
 }
 .showcase__tag {
@@ -1216,11 +1216,11 @@ ul { list-style: none; }
 .cta-banner--dark .cta-banner__title { color: var(--white); }
 .cta-banner__sub {
   font-family: var(--fb);
-  font-size: 13.5px;
+  font-size: 15px;
   margin-top: .5rem;
 }
 .cta-banner--gold .cta-banner__sub { color: rgba(0,0,0,.5); }
-.cta-banner--dark .cta-banner__sub { color: #666; }
+.cta-banner--dark .cta-banner__sub { color: #999999; }
 
 /* ── NABÍDKA (úvodní stránka) ── */
 .nabidka {
