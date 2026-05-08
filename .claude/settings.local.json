@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"c:\\\\Users\\\\marku\\\\Desktop\\\\web-er PC\\\\zákazníci PC\\\\2026\\\\MK bike shop\\\\mkbikeshop\" /b)"
+    ]
+  }
+}

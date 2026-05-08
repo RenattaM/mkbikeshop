@@ -159,47 +159,18 @@
         text-align: center;
       }
 
-      /* Právní info */
-      .legal {
-        background: var(--black);
-        padding: var(--space-xl) var(--px);
-      }
-      .legal__title {
-        font-family: var(--fd);
-        font-size: 28px;
-        font-weight: 900;
-        text-transform: uppercase;
-        color: var(--white);
-        letter-spacing: -0.01em;
-        margin-bottom: 2.5rem;
-      }
-      .legal__title span {
-        color: var(--gold);
-      }
-      .legal__grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-      }
-      .legal__block {
-      }
-      .legal__block-label {
-        font-family: var(--fd);
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 0.75rem;
-      }
-      .legal__block-value {
+      /* Provozní info pod fotkami */
+      .provozni-info {
+        margin-top: 1.25rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border);
         font-family: var(--fb);
-        font-size: 14px;
-        color: #666;
+        font-size: 12px;
+        color: var(--muted);
         line-height: 1.75;
       }
-      .legal__block-value strong {
-        color: var(--white);
+      .provozni-info strong {
+        color: var(--black);
         font-weight: 600;
       }
 
@@ -273,7 +244,7 @@
     <nav class="nav" id="mainNav">
       <a href="index.html" class="nav__logo">
         <img src="img/MK bike shop bez pozadi.png" alt="MK Bike Shop logo" />
-        <span class="nav__logo-name">MK Bike Shop</span>
+        <span class="nav__logo-name">MK Bike Shop Přerov</span>
       </a>
       <div class="nav__links">
         <a href="index.html" class="nav__link">Úvod</a>
@@ -351,11 +322,11 @@
           <div class="k-hours">
             <div class="k-hour-row">
               <span class="k-hour-day">Pondělí – Pátek</span>
-              <span class="k-hour-time">9:00 – 17:00</span>
+              <span class="k-hour-time">9:00–12:00 / 13:00–17:00</span>
             </div>
             <div class="k-hour-row">
               <span class="k-hour-day">Sobota</span>
-              <span class="k-hour-time">9:00 – 12:00</span>
+              <span class="k-hour-time">9:00–11:30</span>
             </div>
             <div class="k-hour-row">
               <span class="k-hour-day">Neděle</span>
@@ -466,60 +437,22 @@
             <div class="foto-label">Prodejna — interiér</div>
           </div>
         </div>
+
+        <div class="provozni-info">
+          Provozovatel: <strong>Martin Kolář</strong> &nbsp;·&nbsp; IČO:
+          <strong>73254568</strong> &nbsp;·&nbsp; Sídlo: Seifertova 492/4, 750
+          02 Přerov<br />
+          Zapsán v živnostenském rejstříku Magistrátu města Přerova.
+        </div>
       </div>
     </div>
-
-    <!-- PRÁVNÍ INFO -->
-    <section class="legal">
-      <div class="t-eyebrow reveal" style="color: var(--gold)">
-        Provozní informace
-      </div>
-      <h2 class="legal__title reveal">Identifikační<br /><span>údaje</span></h2>
-      <div class="legal__grid reveal">
-        <div>
-          <div class="legal__block" style="margin-bottom: 2rem">
-            <div class="legal__block-label">Provozovatel</div>
-            <div class="legal__block-value"><strong>Martin Kolář</strong></div>
-          </div>
-          <div class="legal__block" style="margin-bottom: 2rem">
-            <div class="legal__block-label">IČO</div>
-            <div class="legal__block-value"><strong>73254568</strong></div>
-          </div>
-          <div class="legal__block">
-            <div class="legal__block-label">Sídlo</div>
-            <div class="legal__block-value">
-              <strong>Seifertova 492/4<br />750 02 Přerov</strong>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="legal__block" style="margin-bottom: 2rem">
-            <div class="legal__block-label">Provozovna</div>
-            <div class="legal__block-value">
-              <strong>Palackého 21<br />750 00 Přerov</strong>
-            </div>
-          </div>
-          <div class="legal__block" style="margin-bottom: 2rem">
-            <div class="legal__block-label">Registrace</div>
-            <div class="legal__block-value">
-              Zapsán v živnostenském rejstříku<br />
-              Magistrátu města Přerova.
-            </div>
-          </div>
-          <div class="legal__block">
-            <div class="legal__block-label">Odpovědná osoba</div>
-            <div class="legal__block-value"><strong>Martin Kolář</strong></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <div class="kontakt-cta">
       <div>
         <div class="kontakt-cta__title">Těšíme se na vaši návštěvu.</div>
         <div class="kontakt-cta__sub">
-          Palackého 21, Přerov &nbsp;·&nbsp; Po–Pá 9:00–17:00 &nbsp;·&nbsp; So
-          9:00–12:00
+          Palackého 21, Přerov &nbsp;·&nbsp; Po–Pá 9:00–12:00 / 13:00–17:00
+          &nbsp;·&nbsp; So 9:00–11:30
         </div>
       </div>
     </div>
@@ -528,7 +461,7 @@
       <div class="footer__inner">
         <div>
           <div class="footer__logo">
-            <img src="MK_bike_shop_bez_pozadi.png" alt="MK Bike Shop" />
+            <img src="img/MK bike shop bez pozadi.png" alt="MK Bike Shop" />
             <span class="footer__logo-name">MK Bike Shop</span>
           </div>
           <p class="footer__tagline">
@@ -589,11 +522,11 @@
           <div class="footer__col-title">Otevírací doba</div>
           <div class="footer__hour-row">
             <span class="footer__hour-day">Po – Pá</span
-            ><span class="footer__hour-time">9:00 – 17:00</span>
+            ><span class="footer__hour-time">9:00–12:00 / 13:00–17:00</span>
           </div>
           <div class="footer__hour-row">
             <span class="footer__hour-day">Sobota</span
-            ><span class="footer__hour-time">9:00 – 12:00</span>
+            ><span class="footer__hour-time">9:00–11:30</span>
           </div>
           <div class="footer__hour-row">
             <span class="footer__hour-day">Neděle</span
