@@ -216,7 +216,7 @@ ul { list-style: none; }
   flex-direction: column;
   gap: .75rem;
 }
-.nav-mobile.open { display: flex; }
+.nav-mobile.open { display: flex; position: sticky; top: 66px; z-index: 99; }
 .nav-mobile .nav__link {
   font-size: 14px;
   padding: .65rem 0;
